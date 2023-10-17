@@ -19,14 +19,7 @@ read_data       system/system.data
 kim             interactions    C Ca Cl H N Na O Ti
 neigh_modify    one             10000
 
-# Define Groups
-group       C       type    1   
-group       H       type    4   
-group       N       type    5   
-group       O       type    7   
-group       H2O     type    7   4
-group       Ti      type    8   
-
+# Define Region/Groups
 region      piston  block   INF INF     INF INF     ${Liquid_Z_high} INF
 region      liquid  block   INF INF     INF INF     ${Liquid_Z_low}  ${Liquid_Z_high}
 region      bottom  block   INF INF     INF INF     INF              ${Liquid_Z_low}
@@ -49,17 +42,17 @@ dump_modify     1   element C Ca Cl HW N Na OW Ti
 
 # NPT Equilibrium
 fix             NPT     all npt temp $T $T 100.0  iso $P $P 1000.0
-minimize        1.0e-8 1.0-e-10 10000 100000
+minimize        1.0e-8 1.0e-10 10000 100000
 unfix           NPT
 
 # NVT Equilibrium
 fix             NVT     all nvt temp $T $T 100.0
-minimize        1.0e-8 1.0-e-10 10000 100000
+minimize        1.0e-8 1.0e-10 10000 100000
 unfix           NVT
 
 # NVE Equilibrium
 fix             NVE     all nve
-minimize        1.0e-6 1.0-e-8 10000 100000
+minimize        1.0e-8 1.0e-10 10000 100000
 unfix           NVE
 
 # Finalization
