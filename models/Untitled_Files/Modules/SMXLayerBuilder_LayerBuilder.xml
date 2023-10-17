@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="latin1"?>
+<EXTENSION VERSION="17.1">
+<LOGICS>
+<LOGICITEM NAME="LayerBuilderLogic">
+	<STATE NAME="SMXLayerBuilderState" VERSION="17.1">
+	<PROPERTIES>
+	<PROPERTY NAME="SourceDocumentIDs">
+	<VALUE>
+	<ITEM> </ITEM>
+	<ITEM> </ITEM>
+	<ITEM> </ITEM>
+	</VALUE>
+	</PROPERTY>
+	<PROPERTY NAME="SetNames">
+	<VALUE>
+	<ITEM>Layer 1</ITEM>
+	<ITEM>Layer 2</ITEM>
+	<ITEM>Layer 3</ITEM>
+	</VALUE>
+	</PROPERTY>
+	<PROPERTY NAME="VacuumThickness">
+	<VALUE>
+	<ITEM>0.</ITEM>
+	<ITEM>0.</ITEM>
+	<ITEM>0.</ITEM>
+	</VALUE>
+	</PROPERTY>
+	<PROPERTY NAME="CleaveRule">
+	<VALUE>
+	<ITEM>Default</ITEM>
+	<ITEM>Default</ITEM>
+	<ITEM>Default</ITEM>
+	</VALUE>
+	</PROPERTY>
+	<PROPERTY NAME="FlipRule">
+	<VALUE>
+	<ITEM>No</ITEM>
+	<ITEM>No</ITEM>
+	<ITEM>No</ITEM>
+	</VALUE>
+	</PROPERTY>
+	<PROPERTY NAME="OriginA">
+	<VALUE>
+	<ITEM>0.</ITEM>
+	<ITEM>0.</ITEM>
+	<ITEM>0.</ITEM>
+	</VALUE>
+	</PROPERTY>
+	<PROPERTY NAME="OriginB">
+	<VALUE>
+	<ITEM>0.</ITEM>
+	<ITEM>0.</ITEM>
+	<ITEM>0.</ITEM>
+	</VALUE>
+	</PROPERTY>
+	</PROPERTIES>
+	</STATE>
+</LOGICITEM>
+</LOGICS>
+</EXTENSION>

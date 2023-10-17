@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="latin1"?>
+<EXTENSION VERSION="17.1">
+<LOGICS>
+<LOGICITEM NAME="FindSymmetryLogic">
+	<STATE NAME="SymmetryBuilderFindSymmetryState" VERSION="17.1">
+	<PROPERTIES>
+	</PROPERTIES>
+	</STATE>
+</LOGICITEM>
+<LOGICITEM NAME="MillerPlaneLogic">
+	<STATE NAME="SymmetryBuilderMillerPlaneState" VERSION="17.1">
+	<PROPERTIES>
+	</PROPERTIES>
+	</STATE>
+</LOGICITEM>
+<LOGICITEM NAME="SymmetryBuilderLogic">
+	<STATE NAME="SymmetryBuilderLogicState" VERSION="17.1">
+	<PROPERTIES>
+	<PROPERTY NAME="CrystalSystemFlag">
+	<VALUE>6</VALUE>
+	</PROPERTY>
+	<PROPERTY NAME="CrystalOrientationFlag">
+	<VALUE>3</VALUE>
+	</PROPERTY>
+	<PROPERTY NAME="UseSpecialPositionsFlag">
+	<VALUE>false</VALUE>
+	</PROPERTY>
+	<PROPERTY NAME="SpecialPositionTolerance">
+	<VALUE>0.1</VALUE>
+	</PROPERTY>
+	<PROPERTY NAME="CalculateBondingFlag">
+	<VALUE>0</VALUE>
+	</PROPERTY>
+	<PROPERTY NAME="MaintainCurrentLatticeFlag">
+	<VALUE>true</VALUE>
+	</PROPERTY>
+	<PROPERTY NAME="ReGenerateDisplayAfterFindSymmetry">
+	<VALUE>0</VALUE>
+	</PROPERTY>
+	<PROPERTY NAME="SymmetryFinderTolerance">
+	<VALUE>0.1</VALUE>
+	</PROPERTY>
+	<PROPERTY NAME="NewAVector">
+	<VALUE>
+	<ITEM>1.</ITEM>
+	<ITEM>0.</ITEM>
+	<ITEM>0.</ITEM>
+	</VALUE>
+	</PROPERTY>
+	</PROPERTIES>
+	</STATE>
+</LOGICITEM>
+</LOGICS>
+</EXTENSION>

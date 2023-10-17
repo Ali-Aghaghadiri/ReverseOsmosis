@@ -1,0 +1,934 @@
+<?xml version="1.0" encoding="latin1"?>
+<!DOCTYPE XSD []>
+<XSD Version="17.1" WrittenBy="Materials Studio 17.1">
+	<AtomisticTreeRoot ID="1" NumProperties="62" NumChildren="1">
+		<Property Name="AngleAxisType" DefinedOn="AngleBetweenPlanesBender" Type="Enumerated"/>
+		<Property Name="AngleEnergy" DefinedOn="ClassicalEnergyHolder" Type="Double"/>
+		<Property Name="BeadDocumentID" DefinedOn="MesoMoleculeSet" Type="String"/>
+		<Property Name="BendBendEnergy" DefinedOn="ClassicalEnergyHolder" Type="Double"/>
+		<Property Name="BendTorsionBendEnergy" DefinedOn="ClassicalEnergyHolder" Type="Double"/>
+		<Property Name="BondEnergy" DefinedOn="ClassicalEnergyHolder" Type="Double"/>
+		<Property Name="EFGAsymmetry" DefinedOn="Atom" Type="Double"/>
+		<Property Name="EFGQuadrupolarCoupling" DefinedOn="Atom" Type="Double"/>
+		<Property Name="ElectrostaticEnergy" DefinedOn="ClassicalEnergyHolder" Type="Double"/>
+		<Property Name="FaceMillerIndex" DefinedOn="GrowthFace" Type="MillerIndex"/>
+		<Property Name="FacetTransparency" DefinedOn="GrowthFace" Type="Float"/>
+		<Property Name="FermiLevel" DefinedOn="ScalarFieldBase" Type="Double"/>
+		<Property Name="Force" DefinedOn="Matter" Type="CoDirection"/>
+		<Property Name="FrameFilter" DefinedOn="Trajectory" Type="String"/>
+		<Property Name="HarmonicForceConstant" DefinedOn="HarmonicRestraint" Type="Double"/>
+		<Property Name="HarmonicMinimum" DefinedOn="HarmonicRestraint" Type="Double"/>
+		<Property Name="HydrogenBondEnergy" DefinedOn="ClassicalEnergyHolder" Type="Double"/>
+		<Property Name="ImportOrder" DefinedOn="Bondable" Type="UnsignedInteger"/>
+		<Property Name="InversionEnergy" DefinedOn="ClassicalEnergyHolder" Type="Double"/>
+		<Property Name="IsBackboneAtom" DefinedOn="Atom" Type="Boolean"/>
+		<Property Name="IsChiralCenter" DefinedOn="Atom" Type="Boolean"/>
+		<Property Name="IsOutOfPlane" DefinedOn="Atom" Type="Boolean"/>
+		<Property Name="IsRepeatArrowVisible" DefinedOn="ElectrodeWire" Type="Boolean"/>
+		<Property Name="KineticEnergy" DefinedOn="ClassicalEnergyHolder" Type="Double"/>
+		<Property Name="LineExtentPadding" DefinedOn="BestFitLineMonitor" Type="Double"/>
+		<Property Name="LinkageGroupName" DefinedOn="Linkage" Type="String"/>
+		<Property Name="ListIdentifier" DefinedOn="PropertyList" Type="String"/>
+		<Property Name="NMRShielding" DefinedOn="Atom" Type="Double"/>
+		<Property Name="NonBondEnergy" DefinedOn="ClassicalEnergyHolder" Type="Double"/>
+		<Property Name="NormalMode" DefinedOn="Bondable" Type="Direction"/>
+		<Property Name="NormalModeFrequency" DefinedOn="Bondable" Type="Double"/>
+		<Property Name="NumScanSteps" DefinedOn="LinearScan" Type="UnsignedInteger"/>
+		<Property Name="OrbitalCutoffRadius" DefinedOn="Bondable" Type="Double"/>
+		<Property Name="PlaneExtentPadding" DefinedOn="BestFitPlaneMonitor" Type="Double"/>
+		<Property Name="PotentialEnergy" DefinedOn="ClassicalEnergyHolder" Type="Double"/>
+		<Property Name="QuantizationValue" DefinedOn="ScalarFieldBase" Type="Double"/>
+		<Property Name="RelativeVelocity" DefinedOn="Matter" Type="Direction"/>
+		<Property Name="RepeatArrowScale" DefinedOn="ElectrodeWire" Type="Float"/>
+		<Property Name="RestraintEnergy" DefinedOn="ClassicalEnergyHolder" Type="Double"/>
+		<Property Name="ScanEnd" DefinedOn="LinearScan" Type="Double"/>
+		<Property Name="ScanStart" DefinedOn="LinearScan" Type="Double"/>
+		<Property Name="SeparatedStretchStretchEnergy" DefinedOn="ClassicalEnergyHolder" Type="Double"/>
+		<Property Name="ServerDipoleMoment" DefinedOn="MatterGroupProperties" Type="Direction"/>
+		<Property Name="SimulationStep" DefinedOn="Trajectory" Type="Integer"/>
+		<Property Name="SpinQuantizationDirection" DefinedOn="Atom" Type="Direction"/>
+		<Property Name="Stiffness" DefinedOn="SymmetryMatterHessian" Type="Matrix6x6"/>
+		<Property Name="StretchBendStretchEnergy" DefinedOn="ClassicalEnergyHolder" Type="Double"/>
+		<Property Name="StretchStretchEnergy" DefinedOn="ClassicalEnergyHolder" Type="Double"/>
+		<Property Name="StretchTorsionStretchEnergy" DefinedOn="ClassicalEnergyHolder" Type="Double"/>
+		<Property Name="Temperature" DefinedOn="ClassicalEnergyHolder" Type="Double"/>
+		<Property Name="ThreeBodyNonBondEnergy" DefinedOn="ClassicalEnergyHolder" Type="Double"/>
+		<Property Name="TorsionBendBendEnergy" DefinedOn="ClassicalEnergyHolder" Type="Double"/>
+		<Property Name="TorsionEnergy" DefinedOn="ClassicalEnergyHolder" Type="Double"/>
+		<Property Name="TorsionStretchEnergy" DefinedOn="ClassicalEnergyHolder" Type="Double"/>
+		<Property Name="TotalEnergy" DefinedOn="ClassicalEnergyHolder" Type="Double"/>
+		<Property Name="Units" DefinedOn="ScalarFieldBase" Type="String"/>
+		<Property Name="ValenceCrossTermEnergy" DefinedOn="ClassicalEnergyHolder" Type="Double"/>
+		<Property Name="ValenceDiagonalEnergy" DefinedOn="ClassicalEnergyHolder" Type="Double"/>
+		<Property Name="VanDerWaalsEnergy" DefinedOn="ClassicalEnergyHolder" Type="Double"/>
+		<Property Name="_ServerAtomNames" DefinedOn="IndexProvider" Type="String"/>
+		<Property Name="_Stress" DefinedOn="MatterSymmetrySystem" Type="Matrix"/>
+		<Property Name="_TrajectoryStress" DefinedOn="MatterSymmetrySystem" Type="Matrix"/>
+		<SymmetrySystem ID="2" Mapping="3" Children="ci(834):834+4" Normalized="1" Name="Sketch_8" RemoveOverspecification="0">
+			<MappingSet ID="838" SymmetryDefinition="21" ActiveSystem="2" NumFamilies="1" OwnsTotalConstraintMapping="1" TotalConstraintMapping="3">
+				<MappingFamily ID="839" NumImageMappings="3">
+					<IdentityMapping ID="840" Element="1,0,0,0,0,1,0,0,0,0,1,0" Constraint="1,0,0,0,0,1,0,0,0,0,1,0" MappedObjects="ci(833):5+4,5+22,5+39,5+56,5+73,5+90,5+107,5+124,5+141,5+158,5+175,5+192,5+209,5+226,5+243,5+260,5+277,5+294,5+311,5+328,5+345,5+362,5+379,5+396,5+413,5+430,5+447,5+464,5+481,5+498,5+515,5+532,5+549,5+566,5+583,5+600,5+617,5+634,5+651,5+668,5+685,5+702,5+719,5+736,5+753,5+770,5+787,5+804,5+821,9,333,316,299,282,265,248,231,214,197,180,163,112,95,78,61,44,146,129,27,826,350,367,384,401,418,435,452,469,486,503,520,537,554,571,588,605,622,639,656,673,690,707,724,741,758,775,792,809,10,334,317,300,283,266,249,232,215,198,181,164,113,96,79,62,45,147,130,28,827,351,368,385,402,419,436,453,470,487,504,521,538,555,572,589,606,623,640,657,674,691,708,725,742,759,776,793,810,11,335,318,301,284,267,250,233,216,199,182,165,114,97,80,63,46,148,131,29,828,352,369,386,403,420,437,454,471,488,505,522,539,556,573,590,607,624,641,658,675,692,709,726,743,760,777,794,811,18,342,325,308,291,274,257,240,223,206,189,172,121,104,87,70,53,155,138,36,835,359,376,393,410,427,444,461,478,495,512,529,546,563,580,597,614,631,648,665,682,699,716,733,750,767,784,801,818,19,343,326,309,292,275,258,241,224,207,190,173,122,105,88,71,54,156,139,37,836,360,377,394,411,428,445,462,479,496,513,530,547,564,581,598,615,632,649,666,683,700,717,734,751,768,785,802,819,20,344,327,310,293,276,259,242,225,208,191,174,123,106,89,72,55,157,140,38,837,361,378,395,412,429,446,463,480,497,514,531,548,565,582,599,616,633,650,667,684,701,718,735,752,769,786,803,820,15,339,322,305,288,271,254,237,220,203,186,169,118,101,84,67,50,152,135,33,832,356,373,390,407,424,441,458,475,492,509,526,543,560,577,594,611,628,645,662,679,696,713,730,747,764,781,798,815,16,340,323,306,289,272,255,238,221,204,187,170,119,102,85,68,51,153,136,34,833,357,374,391,408,425,442,459,476,493,510,527,544,561,578,595,612,629,646,663,680,697,714,731,748,765,782,799,816,17,341,324,307,290,273,256,239,222,205,188,171,120,103,86,69,52,154,137,35,834,358,375,392,409,426,443,460,477,494,511,528,545,562,579,596,613,630,647,664,681,698,715,732,749,766,783,800,817,12,336,319,302,285,268,251,234,217,200,183,166,115,98,81,64,47,149,132,30,829,353,370,387,404,421,438,455,472,489,506,523,540,557,574,591,608,625,642,659,676,693,710,727,744,761,778,795,812,13,337,320,303,286,269,252,235,218,201,184,167,116,99,82,65,48,150,133,31,830,354,371,388,405,422,439,456,473,490,507,524,541,558,575,592,609,626,643,660,677,694,711,728,745,762,779,796,813,14,338,321,304,287,270,253,236,219,202,185,168,117,100,83,66,49,151,134,32,831,355,372,389,406,423,440,457,474,491,508,525,542,559,576,593,610,627,644,661,678,695,712,729,746,763,780,797,814" DefectObjects="21,841" NumImages="833" NumDefects="2">
+						<Atom3d ID="4" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="1.01506105108586e-015,7.61295788314393e-016,0.5" Components="Ti"/>
+						<Atom3d ID="5" Mapping="840" Parent="2" RestrictedBy="12,14,13,15,17,16" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.0952380952380974,0.0476190476190475,0.583333000540733" Components="N"/>
+						<Atom3d ID="6" Mapping="840" Parent="2" RestrictedBy="9,11,10,18,20,19" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.047619047619049,0.0952380952380956,0.416666999459267" Components="C"/>
+						<Atom3d ID="7" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.0476190476190488,0.0952380952380951,0.666666001081467" Components="Ti"/>
+						<Atom3d ID="8" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.0952380952380967,0.0476190476190477,0.333333998918533" Components="Ti"/>
+						<Atom3d ID="22" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.142857142857144,7.19712597366782e-016,0.5" Components="Ti"/>
+						<Atom3d ID="23" Mapping="840" Parent="2" RestrictedBy="30,32,31,33,35,34" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.23809523809524,0.0476190476190475,0.583333000540733" Components="N"/>
+						<Atom3d ID="24" Mapping="840" Parent="2" RestrictedBy="27,29,28,36,38,37" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.190476190476192,0.0952380952380956,0.416666999459267" Components="C"/>
+						<Atom3d ID="25" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.190476190476192,0.0952380952380951,0.666666001081467" Components="Ti"/>
+						<Atom3d ID="26" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.238095238095239,0.0476190476190476,0.333333998918533" Components="Ti"/>
+						<Atom3d ID="39" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.285714285714287,6.78129406419172e-016,0.5" Components="Ti"/>
+						<Atom3d ID="40" Mapping="840" Parent="2" RestrictedBy="47,49,48,50,52,51" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.380952380952383,0.0476190476190475,0.583333000540733" Components="N"/>
+						<Atom3d ID="41" Mapping="840" Parent="2" RestrictedBy="44,46,45,53,55,54" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.333333333333335,0.0952380952380956,0.416666999459267" Components="C"/>
+						<Atom3d ID="42" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.333333333333334,0.0952380952380951,0.666666001081467" Components="Ti"/>
+						<Atom3d ID="43" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.380952380952382,0.0476190476190476,0.333333998918533" Components="Ti"/>
+						<Atom3d ID="56" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.428571428571429,6.36546215471561e-016,0.5" Components="Ti"/>
+						<Atom3d ID="57" Mapping="840" Parent="2" RestrictedBy="64,66,65,67,69,68" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.523809523809526,0.0476190476190474,0.583333000540733" Components="N"/>
+						<Atom3d ID="58" Mapping="840" Parent="2" RestrictedBy="61,63,62,70,72,71" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.476190476190478,0.0952380952380955,0.416666999459267" Components="C"/>
+						<Atom3d ID="59" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.476190476190477,0.095238095238095,0.666666001081467" Components="Ti"/>
+						<Atom3d ID="60" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.523809523809525,0.0476190476190475,0.333333998918533" Components="Ti"/>
+						<Atom3d ID="73" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.571428571428572,5.94963024523951e-016,0.5" Components="Ti"/>
+						<Atom3d ID="74" Mapping="840" Parent="2" RestrictedBy="81,83,82,84,86,85" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.666666666666669,0.0476190476190474,0.583333000540733" Components="N"/>
+						<Atom3d ID="75" Mapping="840" Parent="2" RestrictedBy="78,80,79,87,89,88" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.61904761904762,0.0952380952380955,0.416666999459267" Components="C"/>
+						<Atom3d ID="76" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.61904761904762,0.095238095238095,0.666666001081467" Components="Ti"/>
+						<Atom3d ID="77" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.666666666666668,0.0476190476190475,0.333333998918533" Components="Ti"/>
+						<Atom3d ID="90" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.714285714285715,5.53379833576341e-016,0.5" Components="Ti"/>
+						<Atom3d ID="91" Mapping="840" Parent="2" RestrictedBy="98,100,99,101,103,102" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.809523809523812,0.0476190476190473,0.583333000540733" Components="N"/>
+						<Atom3d ID="92" Mapping="840" Parent="2" RestrictedBy="95,97,96,104,106,105" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.761904761904763,0.0952380952380954,0.416666999459267" Components="C"/>
+						<Atom3d ID="93" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.761904761904763,0.0952380952380949,0.666666001081467" Components="Ti"/>
+						<Atom3d ID="94" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.809523809523811,0.0476190476190475,0.333333998918533" Components="Ti"/>
+						<Atom3d ID="107" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.857142857142858,5.1179664262873e-016,0.5" Components="Ti"/>
+						<Atom3d ID="108" Mapping="840" Parent="2" RestrictedBy="115,117,116,118,120,119" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.952380952380954,0.0476190476190473,0.583333000540733" Components="N"/>
+						<Atom3d ID="109" Mapping="840" Parent="2" RestrictedBy="112,114,113,121,123,122" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.904761904761906,0.0952380952380954,0.416666999459267" Components="C"/>
+						<Atom3d ID="110" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.904761904761906,0.0952380952380949,0.666666001081467" Components="Ti"/>
+						<Atom3d ID="111" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.952380952380954,0.0476190476190474,0.333333998918533" Components="Ti"/>
+						<Atom3d ID="124" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="1.01281029707674e-015,0.142857142857144,0.5" Components="Ti"/>
+						<Atom3d ID="125" Mapping="840" Parent="2" RestrictedBy="132,134,133,135,137,136" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.0952380952380974,0.19047619047619,0.583333000540733" Components="N"/>
+						<Atom3d ID="126" Mapping="840" Parent="2" RestrictedBy="129,131,130,138,140,139" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.047619047619049,0.238095238095239,0.416666999459267" Components="C"/>
+						<Atom3d ID="127" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.0476190476190488,0.238095238095238,0.666666001081467" Components="Ti"/>
+						<Atom3d ID="128" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.0952380952380967,0.190476190476191,0.333333998918533" Components="Ti"/>
+						<Atom3d ID="141" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.142857142857144,0.142857142857144,0.5" Components="Ti"/>
+						<Atom3d ID="142" Mapping="840" Parent="2" RestrictedBy="149,151,150,152,154,153" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.23809523809524,0.19047619047619,0.583333000540733" Components="N"/>
+						<Atom3d ID="143" Mapping="840" Parent="2" RestrictedBy="146,148,147,155,157,156" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.190476190476192,0.238095238095238,0.416666999459267" Components="C"/>
+						<Atom3d ID="144" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.190476190476192,0.238095238095238,0.666666001081467" Components="Ti"/>
+						<Atom3d ID="145" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.23809523809524,0.19047619047619,0.333333998918533" Components="Ti"/>
+						<Atom3d ID="158" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.285714285714287,0.142857142857144,0.5" Components="Ti"/>
+						<Atom3d ID="159" Mapping="840" Parent="2" RestrictedBy="166,168,167,169,171,170" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.380952380952383,0.19047619047619,0.583333000540733" Components="N"/>
+						<Atom3d ID="160" Mapping="840" Parent="2" RestrictedBy="163,165,164,172,174,173" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.333333333333335,0.238095238095238,0.416666999459267" Components="C"/>
+						<Atom3d ID="161" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.333333333333334,0.238095238095238,0.666666001081467" Components="Ti"/>
+						<Atom3d ID="162" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.380952380952382,0.19047619047619,0.333333998918533" Components="Ti"/>
+						<Atom3d ID="175" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.428571428571429,0.142857142857143,0.5" Components="Ti"/>
+						<Atom3d ID="176" Mapping="840" Parent="2" RestrictedBy="183,185,184,186,188,187" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.523809523809526,0.19047619047619,0.583333000540733" Components="N"/>
+						<Atom3d ID="177" Mapping="840" Parent="2" RestrictedBy="180,182,181,189,191,190" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.476190476190478,0.238095238095238,0.416666999459267" Components="C"/>
+						<Atom3d ID="178" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.476190476190477,0.238095238095238,0.666666001081467" Components="Ti"/>
+						<Atom3d ID="179" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.523809523809525,0.19047619047619,0.333333998918533" Components="Ti"/>
+						<Atom3d ID="192" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.571428571428572,0.142857142857143,0.5" Components="Ti"/>
+						<Atom3d ID="193" Mapping="840" Parent="2" RestrictedBy="200,202,201,203,205,204" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.666666666666669,0.19047619047619,0.583333000540733" Components="N"/>
+						<Atom3d ID="194" Mapping="840" Parent="2" RestrictedBy="197,199,198,206,208,207" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.61904761904762,0.238095238095238,0.416666999459267" Components="C"/>
+						<Atom3d ID="195" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.61904761904762,0.238095238095238,0.666666001081467" Components="Ti"/>
+						<Atom3d ID="196" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.666666666666668,0.19047619047619,0.333333998918533" Components="Ti"/>
+						<Atom3d ID="209" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.714285714285715,0.142857142857143,0.5" Components="Ti"/>
+						<Atom3d ID="210" Mapping="840" Parent="2" RestrictedBy="217,219,218,220,222,221" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.809523809523812,0.19047619047619,0.583333000540733" Components="N"/>
+						<Atom3d ID="211" Mapping="840" Parent="2" RestrictedBy="214,216,215,223,225,224" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.761904761904763,0.238095238095238,0.416666999459267" Components="C"/>
+						<Atom3d ID="212" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.761904761904763,0.238095238095238,0.666666001081467" Components="Ti"/>
+						<Atom3d ID="213" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.809523809523811,0.19047619047619,0.333333998918533" Components="Ti"/>
+						<Atom3d ID="226" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.857142857142858,0.142857142857143,0.5" Components="Ti"/>
+						<Atom3d ID="227" Mapping="840" Parent="2" RestrictedBy="234,236,235,237,239,238" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.952380952380954,0.19047619047619,0.583333000540733" Components="N"/>
+						<Atom3d ID="228" Mapping="840" Parent="2" RestrictedBy="231,233,232,240,242,241" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.904761904761906,0.238095238095238,0.416666999459267" Components="C"/>
+						<Atom3d ID="229" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.904761904761906,0.238095238095238,0.666666001081467" Components="Ti"/>
+						<Atom3d ID="230" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.952380952380954,0.19047619047619,0.333333998918533" Components="Ti"/>
+						<Atom3d ID="243" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="1.02668808488455e-015,0.285714285714286,0.5" Components="Ti"/>
+						<Atom3d ID="244" Mapping="840" Parent="2" RestrictedBy="251,253,252,254,256,255" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.0952380952380974,0.333333333333333,0.583333000540733" Components="N"/>
+						<Atom3d ID="245" Mapping="840" Parent="2" RestrictedBy="248,250,249,257,259,258" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.047619047619049,0.380952380952381,0.416666999459267" Components="C"/>
+						<Atom3d ID="246" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.0476190476190489,0.380952380952381,0.666666001081467" Components="Ti"/>
+						<Atom3d ID="247" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.0952380952380967,0.333333333333333,0.333333998918533" Components="Ti"/>
+						<Atom3d ID="260" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.142857142857144,0.285714285714286,0.5" Components="Ti"/>
+						<Atom3d ID="261" Mapping="840" Parent="2" RestrictedBy="268,270,269,271,273,272" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.23809523809524,0.333333333333333,0.583333000540733" Components="N"/>
+						<Atom3d ID="262" Mapping="840" Parent="2" RestrictedBy="265,267,266,274,276,275" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.190476190476192,0.380952380952381,0.416666999459267" Components="C"/>
+						<Atom3d ID="263" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.190476190476192,0.380952380952381,0.666666001081467" Components="Ti"/>
+						<Atom3d ID="264" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.23809523809524,0.333333333333333,0.333333998918533" Components="Ti"/>
+						<Atom3d ID="277" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.285714285714287,0.285714285714286,0.5" Components="Ti"/>
+						<Atom3d ID="278" Mapping="840" Parent="2" RestrictedBy="285,287,286,288,290,289" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.380952380952383,0.333333333333333,0.583333000540733" Components="N"/>
+						<Atom3d ID="279" Mapping="840" Parent="2" RestrictedBy="282,284,283,291,293,292" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.333333333333335,0.380952380952381,0.416666999459267" Components="C"/>
+						<Atom3d ID="280" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.333333333333334,0.380952380952381,0.666666001081467" Components="Ti"/>
+						<Atom3d ID="281" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.380952380952382,0.333333333333333,0.333333998918533" Components="Ti"/>
+						<Atom3d ID="294" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.428571428571429,0.285714285714286,0.5" Components="Ti"/>
+						<Atom3d ID="295" Mapping="840" Parent="2" RestrictedBy="302,304,303,305,307,306" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.523809523809526,0.333333333333333,0.583333000540733" Components="N"/>
+						<Atom3d ID="296" Mapping="840" Parent="2" RestrictedBy="299,301,300,308,310,309" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.476190476190478,0.380952380952381,0.416666999459267" Components="C"/>
+						<Atom3d ID="297" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.476190476190477,0.380952380952381,0.666666001081467" Components="Ti"/>
+						<Atom3d ID="298" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.523809523809525,0.333333333333333,0.333333998918533" Components="Ti"/>
+						<Atom3d ID="311" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.571428571428572,0.285714285714286,0.5" Components="Ti"/>
+						<Atom3d ID="312" Mapping="840" Parent="2" RestrictedBy="319,321,320,322,324,323" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.666666666666669,0.333333333333333,0.583333000540733" Components="N"/>
+						<Atom3d ID="313" Mapping="840" Parent="2" RestrictedBy="316,318,317,325,327,326" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.61904761904762,0.380952380952381,0.416666999459267" Components="C"/>
+						<Atom3d ID="314" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.61904761904762,0.380952380952381,0.666666001081467" Components="Ti"/>
+						<Atom3d ID="315" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.666666666666668,0.333333333333333,0.333333998918533" Components="Ti"/>
+						<Atom3d ID="328" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.714285714285715,0.285714285714286,0.5" Components="Ti"/>
+						<Atom3d ID="329" Mapping="840" Parent="2" RestrictedBy="336,338,337,339,341,340" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.809523809523812,0.333333333333333,0.583333000540733" Components="N"/>
+						<Atom3d ID="330" Mapping="840" Parent="2" RestrictedBy="333,335,334,342,344,343" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.761904761904763,0.380952380952381,0.416666999459267" Components="C"/>
+						<Atom3d ID="331" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.761904761904763,0.380952380952381,0.666666001081467" Components="Ti"/>
+						<Atom3d ID="332" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.809523809523811,0.333333333333333,0.333333998918533" Components="Ti"/>
+						<Atom3d ID="345" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.857142857142858,0.285714285714286,0.5" Components="Ti"/>
+						<Atom3d ID="346" Mapping="840" Parent="2" RestrictedBy="353,355,354,356,358,357" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.952380952380954,0.333333333333333,0.583333000540733" Components="N"/>
+						<Atom3d ID="347" Mapping="840" Parent="2" RestrictedBy="350,352,351,359,361,360" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.904761904761906,0.380952380952381,0.416666999459267" Components="C"/>
+						<Atom3d ID="348" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.904761904761906,0.380952380952381,0.666666001081467" Components="Ti"/>
+						<Atom3d ID="349" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.952380952380954,0.333333333333333,0.333333998918533" Components="Ti"/>
+						<Atom3d ID="362" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="9.98932509268926e-016,0.428571428571429,0.5" Components="Ti"/>
+						<Atom3d ID="363" Mapping="840" Parent="2" RestrictedBy="370,372,371,373,375,374" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.0952380952380974,0.476190476190476,0.583333000540733" Components="N"/>
+						<Atom3d ID="364" Mapping="840" Parent="2" RestrictedBy="367,369,368,376,378,377" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.047619047619049,0.523809523809524,0.416666999459267" Components="C"/>
+						<Atom3d ID="365" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.0476190476190488,0.523809523809524,0.666666001081467" Components="Ti"/>
+						<Atom3d ID="366" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.0952380952380966,0.476190476190476,0.333333998918533" Components="Ti"/>
+						<Atom3d ID="379" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.142857142857144,0.428571428571429,0.5" Components="Ti"/>
+						<Atom3d ID="380" Mapping="840" Parent="2" RestrictedBy="387,389,388,390,392,391" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.23809523809524,0.476190476190476,0.583333000540733" Components="N"/>
+						<Atom3d ID="381" Mapping="840" Parent="2" RestrictedBy="384,386,385,393,395,394" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.190476190476192,0.523809523809524,0.416666999459267" Components="C"/>
+						<Atom3d ID="382" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.190476190476192,0.523809523809524,0.666666001081467" Components="Ti"/>
+						<Atom3d ID="383" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.238095238095239,0.476190476190476,0.333333998918533" Components="Ti"/>
+						<Atom3d ID="396" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.285714285714287,0.428571428571429,0.5" Components="Ti"/>
+						<Atom3d ID="397" Mapping="840" Parent="2" RestrictedBy="404,406,405,407,409,408" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.380952380952383,0.476190476190476,0.583333000540733" Components="N"/>
+						<Atom3d ID="398" Mapping="840" Parent="2" RestrictedBy="401,403,402,410,412,411" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.333333333333335,0.523809523809524,0.416666999459267" Components="C"/>
+						<Atom3d ID="399" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.333333333333334,0.523809523809524,0.666666001081467" Components="Ti"/>
+						<Atom3d ID="400" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.380952380952382,0.476190476190476,0.333333998918533" Components="Ti"/>
+						<Atom3d ID="413" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.428571428571429,0.428571428571429,0.5" Components="Ti"/>
+						<Atom3d ID="414" Mapping="840" Parent="2" RestrictedBy="421,423,422,424,426,425" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.523809523809526,0.476190476190476,0.583333000540733" Components="N"/>
+						<Atom3d ID="415" Mapping="840" Parent="2" RestrictedBy="418,420,419,427,429,428" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.476190476190478,0.523809523809524,0.416666999459267" Components="C"/>
+						<Atom3d ID="416" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.476190476190477,0.523809523809523,0.666666001081467" Components="Ti"/>
+						<Atom3d ID="417" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.523809523809525,0.476190476190476,0.333333998918533" Components="Ti"/>
+						<Atom3d ID="430" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.571428571428572,0.428571428571429,0.5" Components="Ti"/>
+						<Atom3d ID="431" Mapping="840" Parent="2" RestrictedBy="438,440,439,441,443,442" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.666666666666669,0.476190476190476,0.583333000540733" Components="N"/>
+						<Atom3d ID="432" Mapping="840" Parent="2" RestrictedBy="435,437,436,444,446,445" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.61904761904762,0.523809523809524,0.416666999459267" Components="C"/>
+						<Atom3d ID="433" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.61904761904762,0.523809523809523,0.666666001081467" Components="Ti"/>
+						<Atom3d ID="434" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.666666666666668,0.476190476190476,0.333333998918533" Components="Ti"/>
+						<Atom3d ID="447" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.714285714285715,0.428571428571429,0.5" Components="Ti"/>
+						<Atom3d ID="448" Mapping="840" Parent="2" RestrictedBy="455,457,456,458,460,459" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.809523809523812,0.476190476190476,0.583333000540733" Components="N"/>
+						<Atom3d ID="449" Mapping="840" Parent="2" RestrictedBy="452,454,453,461,463,462" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.761904761904763,0.523809523809524,0.416666999459267" Components="C"/>
+						<Atom3d ID="450" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.761904761904763,0.523809523809523,0.666666001081467" Components="Ti"/>
+						<Atom3d ID="451" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.809523809523811,0.476190476190476,0.333333998918533" Components="Ti"/>
+						<Atom3d ID="464" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.857142857142858,0.428571428571429,0.5" Components="Ti"/>
+						<Atom3d ID="465" Mapping="840" Parent="2" RestrictedBy="472,474,473,475,477,476" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.952380952380954,0.476190476190476,0.583333000540733" Components="N"/>
+						<Atom3d ID="466" Mapping="840" Parent="2" RestrictedBy="469,471,470,478,480,479" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.904761904761906,0.523809523809524,0.416666999459267" Components="C"/>
+						<Atom3d ID="467" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.904761904761906,0.523809523809523,0.666666001081467" Components="Ti"/>
+						<Atom3d ID="468" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.952380952380954,0.476190476190476,0.333333998918533" Components="Ti"/>
+						<Atom3d ID="481" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="9.71176933653297e-016,0.571428571428572,0.5" Components="Ti"/>
+						<Atom3d ID="482" Mapping="840" Parent="2" RestrictedBy="489,491,490,492,494,493" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.0952380952380974,0.619047619047619,0.583333000540733" Components="N"/>
+						<Atom3d ID="483" Mapping="840" Parent="2" RestrictedBy="486,488,487,495,497,496" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.0476190476190489,0.666666666666667,0.416666999459267" Components="C"/>
+						<Atom3d ID="484" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.0476190476190489,0.666666666666667,0.666666001081467" Components="Ti"/>
+						<Atom3d ID="485" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.0952380952380967,0.619047619047619,0.333333998918533" Components="Ti"/>
+						<Atom3d ID="498" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.142857142857144,0.571428571428572,0.5" Components="Ti"/>
+						<Atom3d ID="499" Mapping="840" Parent="2" RestrictedBy="506,508,507,509,511,510" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.23809523809524,0.619047619047619,0.583333000540733" Components="N"/>
+						<Atom3d ID="500" Mapping="840" Parent="2" RestrictedBy="503,505,504,512,514,513" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.190476190476192,0.666666666666667,0.416666999459267" Components="C"/>
+						<Atom3d ID="501" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.190476190476192,0.666666666666666,0.666666001081467" Components="Ti"/>
+						<Atom3d ID="502" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.23809523809524,0.619047619047619,0.333333998918533" Components="Ti"/>
+						<Atom3d ID="515" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.285714285714287,0.571428571428572,0.5" Components="Ti"/>
+						<Atom3d ID="516" Mapping="840" Parent="2" RestrictedBy="523,525,524,526,528,527" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.380952380952383,0.619047619047619,0.583333000540733" Components="N"/>
+						<Atom3d ID="517" Mapping="840" Parent="2" RestrictedBy="520,522,521,529,531,530" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.333333333333335,0.666666666666667,0.416666999459267" Components="C"/>
+						<Atom3d ID="518" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.333333333333334,0.666666666666666,0.666666001081467" Components="Ti"/>
+						<Atom3d ID="519" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.380952380952382,0.619047619047619,0.333333998918533" Components="Ti"/>
+						<Atom3d ID="532" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.428571428571429,0.571428571428572,0.5" Components="Ti"/>
+						<Atom3d ID="533" Mapping="840" Parent="2" RestrictedBy="540,542,541,543,545,544" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.523809523809526,0.619047619047619,0.583333000540733" Components="N"/>
+						<Atom3d ID="534" Mapping="840" Parent="2" RestrictedBy="537,539,538,546,548,547" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.476190476190478,0.666666666666667,0.416666999459267" Components="C"/>
+						<Atom3d ID="535" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.476190476190477,0.666666666666666,0.666666001081467" Components="Ti"/>
+						<Atom3d ID="536" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.523809523809525,0.619047619047619,0.333333998918533" Components="Ti"/>
+						<Atom3d ID="549" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.571428571428572,0.571428571428572,0.5" Components="Ti"/>
+						<Atom3d ID="550" Mapping="840" Parent="2" RestrictedBy="557,559,558,560,562,561" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.666666666666669,0.619047619047619,0.583333000540733" Components="N"/>
+						<Atom3d ID="551" Mapping="840" Parent="2" RestrictedBy="554,556,555,563,565,564" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.61904761904762,0.666666666666667,0.416666999459267" Components="C"/>
+						<Atom3d ID="552" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.61904761904762,0.666666666666666,0.666666001081467" Components="Ti"/>
+						<Atom3d ID="553" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.666666666666668,0.619047619047619,0.333333998918533" Components="Ti"/>
+						<Atom3d ID="566" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.714285714285715,0.571428571428572,0.5" Components="Ti"/>
+						<Atom3d ID="567" Mapping="840" Parent="2" RestrictedBy="574,576,575,577,579,578" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.809523809523812,0.619047619047619,0.583333000540733" Components="N"/>
+						<Atom3d ID="568" Mapping="840" Parent="2" RestrictedBy="571,573,572,580,582,581" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.761904761904763,0.666666666666667,0.416666999459267" Components="C"/>
+						<Atom3d ID="569" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.761904761904763,0.666666666666666,0.666666001081467" Components="Ti"/>
+						<Atom3d ID="570" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.809523809523811,0.619047619047619,0.333333998918533" Components="Ti"/>
+						<Atom3d ID="583" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.857142857142858,0.571428571428572,0.5" Components="Ti"/>
+						<Atom3d ID="584" Mapping="840" Parent="2" RestrictedBy="591,593,592,594,596,595" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.952380952380955,0.619047619047619,0.583333000540733" Components="N"/>
+						<Atom3d ID="585" Mapping="840" Parent="2" RestrictedBy="588,590,589,597,599,598" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.904761904761906,0.666666666666667,0.416666999459267" Components="C"/>
+						<Atom3d ID="586" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.904761904761906,0.666666666666666,0.666666001081467" Components="Ti"/>
+						<Atom3d ID="587" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.952380952380954,0.619047619047619,0.333333998918533" Components="Ti"/>
+						<Atom3d ID="600" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="1.02668808488455e-015,0.714285714285715,0.5" Components="Ti"/>
+						<Atom3d ID="601" Mapping="840" Parent="2" RestrictedBy="608,610,609,611,613,612" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.0952380952380975,0.761904761904762,0.583333000540733" Components="N"/>
+						<Atom3d ID="602" Mapping="840" Parent="2" RestrictedBy="605,607,606,614,616,615" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.047619047619049,0.80952380952381,0.416666999459267" Components="C"/>
+						<Atom3d ID="603" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.0476190476190489,0.809523809523809,0.666666001081467" Components="Ti"/>
+						<Atom3d ID="604" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.0952380952380967,0.761904761904762,0.333333998918533" Components="Ti"/>
+						<Atom3d ID="617" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.142857142857144,0.714285714285715,0.5" Components="Ti"/>
+						<Atom3d ID="618" Mapping="840" Parent="2" RestrictedBy="625,627,626,628,630,629" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.23809523809524,0.761904761904762,0.583333000540733" Components="N"/>
+						<Atom3d ID="619" Mapping="840" Parent="2" RestrictedBy="622,624,623,631,633,632" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.190476190476192,0.80952380952381,0.416666999459267" Components="C"/>
+						<Atom3d ID="620" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.190476190476192,0.809523809523809,0.666666001081467" Components="Ti"/>
+						<Atom3d ID="621" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.23809523809524,0.761904761904762,0.333333998918533" Components="Ti"/>
+						<Atom3d ID="634" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.285714285714287,0.714285714285715,0.5" Components="Ti"/>
+						<Atom3d ID="635" Mapping="840" Parent="2" RestrictedBy="642,644,643,645,647,646" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.380952380952383,0.761904761904762,0.583333000540733" Components="N"/>
+						<Atom3d ID="636" Mapping="840" Parent="2" RestrictedBy="639,641,640,648,650,649" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.333333333333335,0.80952380952381,0.416666999459267" Components="C"/>
+						<Atom3d ID="637" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.333333333333335,0.809523809523809,0.666666001081467" Components="Ti"/>
+						<Atom3d ID="638" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.380952380952382,0.761904761904762,0.333333998918533" Components="Ti"/>
+						<Atom3d ID="651" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.428571428571429,0.714285714285715,0.5" Components="Ti"/>
+						<Atom3d ID="652" Mapping="840" Parent="2" RestrictedBy="659,661,660,662,664,663" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.523809523809526,0.761904761904762,0.583333000540733" Components="N"/>
+						<Atom3d ID="653" Mapping="840" Parent="2" RestrictedBy="656,658,657,665,667,666" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.476190476190478,0.80952380952381,0.416666999459267" Components="C"/>
+						<Atom3d ID="654" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.476190476190477,0.809523809523809,0.666666001081467" Components="Ti"/>
+						<Atom3d ID="655" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.523809523809525,0.761904761904762,0.333333998918533" Components="Ti"/>
+						<Atom3d ID="668" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.571428571428572,0.714285714285715,0.5" Components="Ti"/>
+						<Atom3d ID="669" Mapping="840" Parent="2" RestrictedBy="676,678,677,679,681,680" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.666666666666669,0.761904761904762,0.583333000540733" Components="N"/>
+						<Atom3d ID="670" Mapping="840" Parent="2" RestrictedBy="673,675,674,682,684,683" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.61904761904762,0.80952380952381,0.416666999459267" Components="C"/>
+						<Atom3d ID="671" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.61904761904762,0.809523809523809,0.666666001081467" Components="Ti"/>
+						<Atom3d ID="672" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.666666666666668,0.761904761904762,0.333333998918533" Components="Ti"/>
+						<Atom3d ID="685" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.714285714285715,0.714285714285715,0.5" Components="Ti"/>
+						<Atom3d ID="686" Mapping="840" Parent="2" RestrictedBy="693,695,694,696,698,697" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.809523809523812,0.761904761904762,0.583333000540733" Components="N"/>
+						<Atom3d ID="687" Mapping="840" Parent="2" RestrictedBy="690,692,691,699,701,700" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.761904761904763,0.80952380952381,0.416666999459267" Components="C"/>
+						<Atom3d ID="688" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.761904761904763,0.809523809523809,0.666666001081467" Components="Ti"/>
+						<Atom3d ID="689" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.809523809523811,0.761904761904762,0.333333998918533" Components="Ti"/>
+						<Atom3d ID="702" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.857142857142858,0.714285714285715,0.5" Components="Ti"/>
+						<Atom3d ID="703" Mapping="840" Parent="2" RestrictedBy="710,712,711,713,715,714" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.952380952380954,0.761904761904762,0.583333000540733" Components="N"/>
+						<Atom3d ID="704" Mapping="840" Parent="2" RestrictedBy="707,709,708,716,718,717" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.904761904761906,0.80952380952381,0.416666999459267" Components="C"/>
+						<Atom3d ID="705" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.904761904761906,0.809523809523809,0.666666001081467" Components="Ti"/>
+						<Atom3d ID="706" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.952380952380954,0.761904761904762,0.333333998918533" Components="Ti"/>
+						<Atom3d ID="719" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="1.02668808488455e-015,0.857142857142858,0.5" Components="Ti"/>
+						<Atom3d ID="720" Mapping="840" Parent="2" RestrictedBy="727,729,728,730,732,731" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.0952380952380974,0.904761904761905,0.583333000540733" Components="N"/>
+						<Atom3d ID="721" Mapping="840" Parent="2" RestrictedBy="724,726,725,733,735,734" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.0476190476190489,0.952380952380953,0.416666999459267" Components="C"/>
+						<Atom3d ID="722" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.0476190476190488,0.952380952380952,0.666666001081467" Components="Ti"/>
+						<Atom3d ID="723" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.0952380952380966,0.904761904761905,0.333333998918533" Components="Ti"/>
+						<Atom3d ID="736" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.142857142857144,0.857142857142858,0.5" Components="Ti"/>
+						<Atom3d ID="737" Mapping="840" Parent="2" RestrictedBy="744,746,745,747,749,748" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.23809523809524,0.904761904761905,0.583333000540733" Components="N"/>
+						<Atom3d ID="738" Mapping="840" Parent="2" RestrictedBy="741,743,742,750,752,751" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.190476190476192,0.952380952380953,0.416666999459267" Components="C"/>
+						<Atom3d ID="739" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.190476190476192,0.952380952380952,0.666666001081467" Components="Ti"/>
+						<Atom3d ID="740" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.238095238095239,0.904761904761905,0.333333998918533" Components="Ti"/>
+						<Atom3d ID="753" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.285714285714287,0.857142857142858,0.5" Components="Ti"/>
+						<Atom3d ID="754" Mapping="840" Parent="2" RestrictedBy="761,763,762,764,766,765" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.380952380952383,0.904761904761904,0.583333000540733" Components="N"/>
+						<Atom3d ID="755" Mapping="840" Parent="2" RestrictedBy="758,760,759,767,769,768" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.333333333333335,0.952380952380953,0.416666999459267" Components="C"/>
+						<Atom3d ID="756" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.333333333333334,0.952380952380952,0.666666001081467" Components="Ti"/>
+						<Atom3d ID="757" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.380952380952382,0.904761904761905,0.333333998918533" Components="Ti"/>
+						<Atom3d ID="770" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.428571428571429,0.857142857142858,0.5" Components="Ti"/>
+						<Atom3d ID="771" Mapping="840" Parent="2" RestrictedBy="778,780,779,781,783,782" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.523809523809526,0.904761904761904,0.583333000540733" Components="N"/>
+						<Atom3d ID="772" Mapping="840" Parent="2" RestrictedBy="775,777,776,784,786,785" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.476190476190477,0.952380952380953,0.416666999459267" Components="C"/>
+						<Atom3d ID="773" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.476190476190477,0.952380952380952,0.666666001081467" Components="Ti"/>
+						<Atom3d ID="774" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.523809523809525,0.904761904761905,0.333333998918533" Components="Ti"/>
+						<Atom3d ID="787" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.571428571428572,0.857142857142858,0.5" Components="Ti"/>
+						<Atom3d ID="788" Mapping="840" Parent="2" RestrictedBy="795,797,796,798,800,799" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.666666666666669,0.904761904761904,0.583333000540733" Components="N"/>
+						<Atom3d ID="789" Mapping="840" Parent="2" RestrictedBy="792,794,793,801,803,802" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.61904761904762,0.952380952380953,0.416666999459267" Components="C"/>
+						<Atom3d ID="790" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.61904761904762,0.952380952380952,0.666666001081467" Components="Ti"/>
+						<Atom3d ID="791" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.666666666666668,0.904761904761904,0.333333998918533" Components="Ti"/>
+						<Atom3d ID="804" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.714285714285715,0.857142857142858,0.5" Components="Ti"/>
+						<Atom3d ID="805" Mapping="840" Parent="2" RestrictedBy="812,814,813,815,817,816" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.809523809523812,0.904761904761904,0.583333000540733" Components="N"/>
+						<Atom3d ID="806" Mapping="840" Parent="2" RestrictedBy="809,811,810,818,820,819" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.761904761904763,0.952380952380952,0.416666999459267" Components="C"/>
+						<Atom3d ID="807" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.761904761904763,0.952380952380952,0.666666001081467" Components="Ti"/>
+						<Atom3d ID="808" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.809523809523811,0.904761904761904,0.333333998918533" Components="Ti"/>
+						<Atom3d ID="821" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.857142857142858,0.857142857142858,0.5" Components="Ti"/>
+						<Atom3d ID="822" Mapping="840" Parent="2" RestrictedBy="829,831,830,832,834,833" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.952380952380954,0.904761904761904,0.583333000540733" Components="N"/>
+						<Atom3d ID="823" Mapping="840" Parent="2" RestrictedBy="826,828,827,835,837,836" RestrictedProperties="FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ,FractionalXYZ" DisplayStyle="CPK" XYZ="0.904761904761906,0.952380952380952,0.416666999459267" Components="C"/>
+						<Atom3d ID="824" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.904761904761906,0.952380952380952,0.666666001081467" Components="Ti"/>
+						<Atom3d ID="825" Mapping="840" Parent="2" DisplayStyle="CPK" XYZ="0.952380952380954,0.904761904761904,0.333333998918533" Components="Ti"/>
+						<CompleteRestriction ID="9" Mapping="840" Parent="2" RestrictsObjects="6" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="333" Mapping="840" Parent="2" RestrictsObjects="330" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="316" Mapping="840" Parent="2" RestrictsObjects="313" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="299" Mapping="840" Parent="2" RestrictsObjects="296" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="282" Mapping="840" Parent="2" RestrictsObjects="279" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="265" Mapping="840" Parent="2" RestrictsObjects="262" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="248" Mapping="840" Parent="2" RestrictsObjects="245" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="231" Mapping="840" Parent="2" RestrictsObjects="228" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="214" Mapping="840" Parent="2" RestrictsObjects="211" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="197" Mapping="840" Parent="2" RestrictsObjects="194" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="180" Mapping="840" Parent="2" RestrictsObjects="177" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="163" Mapping="840" Parent="2" RestrictsObjects="160" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="112" Mapping="840" Parent="2" RestrictsObjects="109" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="95" Mapping="840" Parent="2" RestrictsObjects="92" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="78" Mapping="840" Parent="2" RestrictsObjects="75" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="61" Mapping="840" Parent="2" RestrictsObjects="58" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="44" Mapping="840" Parent="2" RestrictsObjects="41" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="146" Mapping="840" Parent="2" RestrictsObjects="143" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="129" Mapping="840" Parent="2" RestrictsObjects="126" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="27" Mapping="840" Parent="2" RestrictsObjects="24" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="826" Mapping="840" Parent="2" RestrictsObjects="823" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="350" Mapping="840" Parent="2" RestrictsObjects="347" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="367" Mapping="840" Parent="2" RestrictsObjects="364" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="384" Mapping="840" Parent="2" RestrictsObjects="381" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="401" Mapping="840" Parent="2" RestrictsObjects="398" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="418" Mapping="840" Parent="2" RestrictsObjects="415" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="435" Mapping="840" Parent="2" RestrictsObjects="432" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="452" Mapping="840" Parent="2" RestrictsObjects="449" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="469" Mapping="840" Parent="2" RestrictsObjects="466" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="486" Mapping="840" Parent="2" RestrictsObjects="483" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="503" Mapping="840" Parent="2" RestrictsObjects="500" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="520" Mapping="840" Parent="2" RestrictsObjects="517" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="537" Mapping="840" Parent="2" RestrictsObjects="534" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="554" Mapping="840" Parent="2" RestrictsObjects="551" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="571" Mapping="840" Parent="2" RestrictsObjects="568" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="588" Mapping="840" Parent="2" RestrictsObjects="585" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="605" Mapping="840" Parent="2" RestrictsObjects="602" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="622" Mapping="840" Parent="2" RestrictsObjects="619" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="639" Mapping="840" Parent="2" RestrictsObjects="636" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="656" Mapping="840" Parent="2" RestrictsObjects="653" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="673" Mapping="840" Parent="2" RestrictsObjects="670" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="690" Mapping="840" Parent="2" RestrictsObjects="687" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="707" Mapping="840" Parent="2" RestrictsObjects="704" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="724" Mapping="840" Parent="2" RestrictsObjects="721" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="741" Mapping="840" Parent="2" RestrictsObjects="738" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="758" Mapping="840" Parent="2" RestrictsObjects="755" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="775" Mapping="840" Parent="2" RestrictsObjects="772" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="792" Mapping="840" Parent="2" RestrictsObjects="789" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="809" Mapping="840" Parent="2" RestrictsObjects="806" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="10" Mapping="840" Parent="2" RestrictsObjects="6" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="334" Mapping="840" Parent="2" RestrictsObjects="330" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="317" Mapping="840" Parent="2" RestrictsObjects="313" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="300" Mapping="840" Parent="2" RestrictsObjects="296" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="283" Mapping="840" Parent="2" RestrictsObjects="279" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="266" Mapping="840" Parent="2" RestrictsObjects="262" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="249" Mapping="840" Parent="2" RestrictsObjects="245" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="232" Mapping="840" Parent="2" RestrictsObjects="228" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="215" Mapping="840" Parent="2" RestrictsObjects="211" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="198" Mapping="840" Parent="2" RestrictsObjects="194" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="181" Mapping="840" Parent="2" RestrictsObjects="177" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="164" Mapping="840" Parent="2" RestrictsObjects="160" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="113" Mapping="840" Parent="2" RestrictsObjects="109" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="96" Mapping="840" Parent="2" RestrictsObjects="92" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="79" Mapping="840" Parent="2" RestrictsObjects="75" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="62" Mapping="840" Parent="2" RestrictsObjects="58" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="45" Mapping="840" Parent="2" RestrictsObjects="41" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="147" Mapping="840" Parent="2" RestrictsObjects="143" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="130" Mapping="840" Parent="2" RestrictsObjects="126" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="28" Mapping="840" Parent="2" RestrictsObjects="24" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="827" Mapping="840" Parent="2" RestrictsObjects="823" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="351" Mapping="840" Parent="2" RestrictsObjects="347" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="368" Mapping="840" Parent="2" RestrictsObjects="364" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="385" Mapping="840" Parent="2" RestrictsObjects="381" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="402" Mapping="840" Parent="2" RestrictsObjects="398" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="419" Mapping="840" Parent="2" RestrictsObjects="415" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="436" Mapping="840" Parent="2" RestrictsObjects="432" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="453" Mapping="840" Parent="2" RestrictsObjects="449" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="470" Mapping="840" Parent="2" RestrictsObjects="466" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="487" Mapping="840" Parent="2" RestrictsObjects="483" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="504" Mapping="840" Parent="2" RestrictsObjects="500" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="521" Mapping="840" Parent="2" RestrictsObjects="517" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="538" Mapping="840" Parent="2" RestrictsObjects="534" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="555" Mapping="840" Parent="2" RestrictsObjects="551" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="572" Mapping="840" Parent="2" RestrictsObjects="568" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="589" Mapping="840" Parent="2" RestrictsObjects="585" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="606" Mapping="840" Parent="2" RestrictsObjects="602" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="623" Mapping="840" Parent="2" RestrictsObjects="619" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="640" Mapping="840" Parent="2" RestrictsObjects="636" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="657" Mapping="840" Parent="2" RestrictsObjects="653" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="674" Mapping="840" Parent="2" RestrictsObjects="670" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="691" Mapping="840" Parent="2" RestrictsObjects="687" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="708" Mapping="840" Parent="2" RestrictsObjects="704" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="725" Mapping="840" Parent="2" RestrictsObjects="721" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="742" Mapping="840" Parent="2" RestrictsObjects="738" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="759" Mapping="840" Parent="2" RestrictsObjects="755" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="776" Mapping="840" Parent="2" RestrictsObjects="772" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="793" Mapping="840" Parent="2" RestrictsObjects="789" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="810" Mapping="840" Parent="2" RestrictsObjects="806" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="11" Mapping="840" Parent="2" RestrictsObjects="6" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="335" Mapping="840" Parent="2" RestrictsObjects="330" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="318" Mapping="840" Parent="2" RestrictsObjects="313" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="301" Mapping="840" Parent="2" RestrictsObjects="296" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="284" Mapping="840" Parent="2" RestrictsObjects="279" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="267" Mapping="840" Parent="2" RestrictsObjects="262" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="250" Mapping="840" Parent="2" RestrictsObjects="245" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="233" Mapping="840" Parent="2" RestrictsObjects="228" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="216" Mapping="840" Parent="2" RestrictsObjects="211" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="199" Mapping="840" Parent="2" RestrictsObjects="194" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="182" Mapping="840" Parent="2" RestrictsObjects="177" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="165" Mapping="840" Parent="2" RestrictsObjects="160" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="114" Mapping="840" Parent="2" RestrictsObjects="109" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="97" Mapping="840" Parent="2" RestrictsObjects="92" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="80" Mapping="840" Parent="2" RestrictsObjects="75" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="63" Mapping="840" Parent="2" RestrictsObjects="58" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="46" Mapping="840" Parent="2" RestrictsObjects="41" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="148" Mapping="840" Parent="2" RestrictsObjects="143" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="131" Mapping="840" Parent="2" RestrictsObjects="126" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="29" Mapping="840" Parent="2" RestrictsObjects="24" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="828" Mapping="840" Parent="2" RestrictsObjects="823" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="352" Mapping="840" Parent="2" RestrictsObjects="347" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="369" Mapping="840" Parent="2" RestrictsObjects="364" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="386" Mapping="840" Parent="2" RestrictsObjects="381" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="403" Mapping="840" Parent="2" RestrictsObjects="398" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="420" Mapping="840" Parent="2" RestrictsObjects="415" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="437" Mapping="840" Parent="2" RestrictsObjects="432" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="454" Mapping="840" Parent="2" RestrictsObjects="449" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="471" Mapping="840" Parent="2" RestrictsObjects="466" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="488" Mapping="840" Parent="2" RestrictsObjects="483" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="505" Mapping="840" Parent="2" RestrictsObjects="500" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="522" Mapping="840" Parent="2" RestrictsObjects="517" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="539" Mapping="840" Parent="2" RestrictsObjects="534" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="556" Mapping="840" Parent="2" RestrictsObjects="551" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="573" Mapping="840" Parent="2" RestrictsObjects="568" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="590" Mapping="840" Parent="2" RestrictsObjects="585" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="607" Mapping="840" Parent="2" RestrictsObjects="602" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="624" Mapping="840" Parent="2" RestrictsObjects="619" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="641" Mapping="840" Parent="2" RestrictsObjects="636" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="658" Mapping="840" Parent="2" RestrictsObjects="653" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="675" Mapping="840" Parent="2" RestrictsObjects="670" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="692" Mapping="840" Parent="2" RestrictsObjects="687" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="709" Mapping="840" Parent="2" RestrictsObjects="704" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="726" Mapping="840" Parent="2" RestrictsObjects="721" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="743" Mapping="840" Parent="2" RestrictsObjects="738" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="760" Mapping="840" Parent="2" RestrictsObjects="755" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="777" Mapping="840" Parent="2" RestrictsObjects="772" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="794" Mapping="840" Parent="2" RestrictsObjects="789" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="811" Mapping="840" Parent="2" RestrictsObjects="806" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="18" Mapping="840" Parent="2" RestrictsObjects="6" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="342" Mapping="840" Parent="2" RestrictsObjects="330" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="325" Mapping="840" Parent="2" RestrictsObjects="313" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="308" Mapping="840" Parent="2" RestrictsObjects="296" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="291" Mapping="840" Parent="2" RestrictsObjects="279" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="274" Mapping="840" Parent="2" RestrictsObjects="262" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="257" Mapping="840" Parent="2" RestrictsObjects="245" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="240" Mapping="840" Parent="2" RestrictsObjects="228" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="223" Mapping="840" Parent="2" RestrictsObjects="211" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="206" Mapping="840" Parent="2" RestrictsObjects="194" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="189" Mapping="840" Parent="2" RestrictsObjects="177" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="172" Mapping="840" Parent="2" RestrictsObjects="160" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="121" Mapping="840" Parent="2" RestrictsObjects="109" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="104" Mapping="840" Parent="2" RestrictsObjects="92" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="87" Mapping="840" Parent="2" RestrictsObjects="75" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="70" Mapping="840" Parent="2" RestrictsObjects="58" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="53" Mapping="840" Parent="2" RestrictsObjects="41" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="155" Mapping="840" Parent="2" RestrictsObjects="143" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="138" Mapping="840" Parent="2" RestrictsObjects="126" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="36" Mapping="840" Parent="2" RestrictsObjects="24" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="835" Mapping="840" Parent="2" RestrictsObjects="823" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="359" Mapping="840" Parent="2" RestrictsObjects="347" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="376" Mapping="840" Parent="2" RestrictsObjects="364" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="393" Mapping="840" Parent="2" RestrictsObjects="381" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="410" Mapping="840" Parent="2" RestrictsObjects="398" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="427" Mapping="840" Parent="2" RestrictsObjects="415" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="444" Mapping="840" Parent="2" RestrictsObjects="432" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="461" Mapping="840" Parent="2" RestrictsObjects="449" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="478" Mapping="840" Parent="2" RestrictsObjects="466" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="495" Mapping="840" Parent="2" RestrictsObjects="483" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="512" Mapping="840" Parent="2" RestrictsObjects="500" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="529" Mapping="840" Parent="2" RestrictsObjects="517" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="546" Mapping="840" Parent="2" RestrictsObjects="534" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="563" Mapping="840" Parent="2" RestrictsObjects="551" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="580" Mapping="840" Parent="2" RestrictsObjects="568" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="597" Mapping="840" Parent="2" RestrictsObjects="585" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="614" Mapping="840" Parent="2" RestrictsObjects="602" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="631" Mapping="840" Parent="2" RestrictsObjects="619" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="648" Mapping="840" Parent="2" RestrictsObjects="636" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="665" Mapping="840" Parent="2" RestrictsObjects="653" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="682" Mapping="840" Parent="2" RestrictsObjects="670" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="699" Mapping="840" Parent="2" RestrictsObjects="687" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="716" Mapping="840" Parent="2" RestrictsObjects="704" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="733" Mapping="840" Parent="2" RestrictsObjects="721" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="750" Mapping="840" Parent="2" RestrictsObjects="738" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="767" Mapping="840" Parent="2" RestrictsObjects="755" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="784" Mapping="840" Parent="2" RestrictsObjects="772" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="801" Mapping="840" Parent="2" RestrictsObjects="789" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="818" Mapping="840" Parent="2" RestrictsObjects="806" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="19" Mapping="840" Parent="2" RestrictsObjects="6" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="343" Mapping="840" Parent="2" RestrictsObjects="330" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="326" Mapping="840" Parent="2" RestrictsObjects="313" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="309" Mapping="840" Parent="2" RestrictsObjects="296" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="292" Mapping="840" Parent="2" RestrictsObjects="279" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="275" Mapping="840" Parent="2" RestrictsObjects="262" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="258" Mapping="840" Parent="2" RestrictsObjects="245" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="241" Mapping="840" Parent="2" RestrictsObjects="228" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="224" Mapping="840" Parent="2" RestrictsObjects="211" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="207" Mapping="840" Parent="2" RestrictsObjects="194" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="190" Mapping="840" Parent="2" RestrictsObjects="177" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="173" Mapping="840" Parent="2" RestrictsObjects="160" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="122" Mapping="840" Parent="2" RestrictsObjects="109" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="105" Mapping="840" Parent="2" RestrictsObjects="92" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="88" Mapping="840" Parent="2" RestrictsObjects="75" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="71" Mapping="840" Parent="2" RestrictsObjects="58" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="54" Mapping="840" Parent="2" RestrictsObjects="41" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="156" Mapping="840" Parent="2" RestrictsObjects="143" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="139" Mapping="840" Parent="2" RestrictsObjects="126" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="37" Mapping="840" Parent="2" RestrictsObjects="24" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="836" Mapping="840" Parent="2" RestrictsObjects="823" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="360" Mapping="840" Parent="2" RestrictsObjects="347" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="377" Mapping="840" Parent="2" RestrictsObjects="364" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="394" Mapping="840" Parent="2" RestrictsObjects="381" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="411" Mapping="840" Parent="2" RestrictsObjects="398" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="428" Mapping="840" Parent="2" RestrictsObjects="415" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="445" Mapping="840" Parent="2" RestrictsObjects="432" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="462" Mapping="840" Parent="2" RestrictsObjects="449" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="479" Mapping="840" Parent="2" RestrictsObjects="466" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="496" Mapping="840" Parent="2" RestrictsObjects="483" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="513" Mapping="840" Parent="2" RestrictsObjects="500" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="530" Mapping="840" Parent="2" RestrictsObjects="517" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="547" Mapping="840" Parent="2" RestrictsObjects="534" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="564" Mapping="840" Parent="2" RestrictsObjects="551" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="581" Mapping="840" Parent="2" RestrictsObjects="568" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="598" Mapping="840" Parent="2" RestrictsObjects="585" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="615" Mapping="840" Parent="2" RestrictsObjects="602" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="632" Mapping="840" Parent="2" RestrictsObjects="619" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="649" Mapping="840" Parent="2" RestrictsObjects="636" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="666" Mapping="840" Parent="2" RestrictsObjects="653" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="683" Mapping="840" Parent="2" RestrictsObjects="670" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="700" Mapping="840" Parent="2" RestrictsObjects="687" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="717" Mapping="840" Parent="2" RestrictsObjects="704" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="734" Mapping="840" Parent="2" RestrictsObjects="721" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="751" Mapping="840" Parent="2" RestrictsObjects="738" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="768" Mapping="840" Parent="2" RestrictsObjects="755" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="785" Mapping="840" Parent="2" RestrictsObjects="772" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="802" Mapping="840" Parent="2" RestrictsObjects="789" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="819" Mapping="840" Parent="2" RestrictsObjects="806" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="20" Mapping="840" Parent="2" RestrictsObjects="6" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="344" Mapping="840" Parent="2" RestrictsObjects="330" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="327" Mapping="840" Parent="2" RestrictsObjects="313" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="310" Mapping="840" Parent="2" RestrictsObjects="296" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="293" Mapping="840" Parent="2" RestrictsObjects="279" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="276" Mapping="840" Parent="2" RestrictsObjects="262" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="259" Mapping="840" Parent="2" RestrictsObjects="245" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="242" Mapping="840" Parent="2" RestrictsObjects="228" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="225" Mapping="840" Parent="2" RestrictsObjects="211" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="208" Mapping="840" Parent="2" RestrictsObjects="194" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="191" Mapping="840" Parent="2" RestrictsObjects="177" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="174" Mapping="840" Parent="2" RestrictsObjects="160" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="123" Mapping="840" Parent="2" RestrictsObjects="109" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="106" Mapping="840" Parent="2" RestrictsObjects="92" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="89" Mapping="840" Parent="2" RestrictsObjects="75" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="72" Mapping="840" Parent="2" RestrictsObjects="58" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="55" Mapping="840" Parent="2" RestrictsObjects="41" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="157" Mapping="840" Parent="2" RestrictsObjects="143" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="140" Mapping="840" Parent="2" RestrictsObjects="126" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="38" Mapping="840" Parent="2" RestrictsObjects="24" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="837" Mapping="840" Parent="2" RestrictsObjects="823" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="361" Mapping="840" Parent="2" RestrictsObjects="347" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="378" Mapping="840" Parent="2" RestrictsObjects="364" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="395" Mapping="840" Parent="2" RestrictsObjects="381" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="412" Mapping="840" Parent="2" RestrictsObjects="398" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="429" Mapping="840" Parent="2" RestrictsObjects="415" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="446" Mapping="840" Parent="2" RestrictsObjects="432" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="463" Mapping="840" Parent="2" RestrictsObjects="449" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="480" Mapping="840" Parent="2" RestrictsObjects="466" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="497" Mapping="840" Parent="2" RestrictsObjects="483" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="514" Mapping="840" Parent="2" RestrictsObjects="500" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="531" Mapping="840" Parent="2" RestrictsObjects="517" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="548" Mapping="840" Parent="2" RestrictsObjects="534" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="565" Mapping="840" Parent="2" RestrictsObjects="551" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="582" Mapping="840" Parent="2" RestrictsObjects="568" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="599" Mapping="840" Parent="2" RestrictsObjects="585" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="616" Mapping="840" Parent="2" RestrictsObjects="602" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="633" Mapping="840" Parent="2" RestrictsObjects="619" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="650" Mapping="840" Parent="2" RestrictsObjects="636" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="667" Mapping="840" Parent="2" RestrictsObjects="653" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="684" Mapping="840" Parent="2" RestrictsObjects="670" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="701" Mapping="840" Parent="2" RestrictsObjects="687" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="718" Mapping="840" Parent="2" RestrictsObjects="704" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="735" Mapping="840" Parent="2" RestrictsObjects="721" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="752" Mapping="840" Parent="2" RestrictsObjects="738" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="769" Mapping="840" Parent="2" RestrictsObjects="755" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="786" Mapping="840" Parent="2" RestrictsObjects="772" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="803" Mapping="840" Parent="2" RestrictsObjects="789" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="820" Mapping="840" Parent="2" RestrictsObjects="806" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="15" Mapping="840" Parent="2" RestrictsObjects="5" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="339" Mapping="840" Parent="2" RestrictsObjects="329" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="322" Mapping="840" Parent="2" RestrictsObjects="312" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="305" Mapping="840" Parent="2" RestrictsObjects="295" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="288" Mapping="840" Parent="2" RestrictsObjects="278" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="271" Mapping="840" Parent="2" RestrictsObjects="261" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="254" Mapping="840" Parent="2" RestrictsObjects="244" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="237" Mapping="840" Parent="2" RestrictsObjects="227" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="220" Mapping="840" Parent="2" RestrictsObjects="210" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="203" Mapping="840" Parent="2" RestrictsObjects="193" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="186" Mapping="840" Parent="2" RestrictsObjects="176" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="169" Mapping="840" Parent="2" RestrictsObjects="159" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="118" Mapping="840" Parent="2" RestrictsObjects="108" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="101" Mapping="840" Parent="2" RestrictsObjects="91" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="84" Mapping="840" Parent="2" RestrictsObjects="74" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="67" Mapping="840" Parent="2" RestrictsObjects="57" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="50" Mapping="840" Parent="2" RestrictsObjects="40" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="152" Mapping="840" Parent="2" RestrictsObjects="142" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="135" Mapping="840" Parent="2" RestrictsObjects="125" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="33" Mapping="840" Parent="2" RestrictsObjects="23" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="832" Mapping="840" Parent="2" RestrictsObjects="822" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="356" Mapping="840" Parent="2" RestrictsObjects="346" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="373" Mapping="840" Parent="2" RestrictsObjects="363" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="390" Mapping="840" Parent="2" RestrictsObjects="380" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="407" Mapping="840" Parent="2" RestrictsObjects="397" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="424" Mapping="840" Parent="2" RestrictsObjects="414" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="441" Mapping="840" Parent="2" RestrictsObjects="431" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="458" Mapping="840" Parent="2" RestrictsObjects="448" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="475" Mapping="840" Parent="2" RestrictsObjects="465" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="492" Mapping="840" Parent="2" RestrictsObjects="482" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="509" Mapping="840" Parent="2" RestrictsObjects="499" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="526" Mapping="840" Parent="2" RestrictsObjects="516" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="543" Mapping="840" Parent="2" RestrictsObjects="533" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="560" Mapping="840" Parent="2" RestrictsObjects="550" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="577" Mapping="840" Parent="2" RestrictsObjects="567" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="594" Mapping="840" Parent="2" RestrictsObjects="584" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="611" Mapping="840" Parent="2" RestrictsObjects="601" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="628" Mapping="840" Parent="2" RestrictsObjects="618" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="645" Mapping="840" Parent="2" RestrictsObjects="635" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="662" Mapping="840" Parent="2" RestrictsObjects="652" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="679" Mapping="840" Parent="2" RestrictsObjects="669" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="696" Mapping="840" Parent="2" RestrictsObjects="686" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="713" Mapping="840" Parent="2" RestrictsObjects="703" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="730" Mapping="840" Parent="2" RestrictsObjects="720" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="747" Mapping="840" Parent="2" RestrictsObjects="737" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="764" Mapping="840" Parent="2" RestrictsObjects="754" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="781" Mapping="840" Parent="2" RestrictsObjects="771" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="798" Mapping="840" Parent="2" RestrictsObjects="788" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="815" Mapping="840" Parent="2" RestrictsObjects="805" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="16" Mapping="840" Parent="2" RestrictsObjects="5" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="340" Mapping="840" Parent="2" RestrictsObjects="329" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="323" Mapping="840" Parent="2" RestrictsObjects="312" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="306" Mapping="840" Parent="2" RestrictsObjects="295" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="289" Mapping="840" Parent="2" RestrictsObjects="278" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="272" Mapping="840" Parent="2" RestrictsObjects="261" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="255" Mapping="840" Parent="2" RestrictsObjects="244" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="238" Mapping="840" Parent="2" RestrictsObjects="227" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="221" Mapping="840" Parent="2" RestrictsObjects="210" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="204" Mapping="840" Parent="2" RestrictsObjects="193" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="187" Mapping="840" Parent="2" RestrictsObjects="176" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="170" Mapping="840" Parent="2" RestrictsObjects="159" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="119" Mapping="840" Parent="2" RestrictsObjects="108" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="102" Mapping="840" Parent="2" RestrictsObjects="91" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="85" Mapping="840" Parent="2" RestrictsObjects="74" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="68" Mapping="840" Parent="2" RestrictsObjects="57" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="51" Mapping="840" Parent="2" RestrictsObjects="40" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="153" Mapping="840" Parent="2" RestrictsObjects="142" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="136" Mapping="840" Parent="2" RestrictsObjects="125" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="34" Mapping="840" Parent="2" RestrictsObjects="23" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="833" Mapping="840" Parent="2" RestrictsObjects="822" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="357" Mapping="840" Parent="2" RestrictsObjects="346" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="374" Mapping="840" Parent="2" RestrictsObjects="363" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="391" Mapping="840" Parent="2" RestrictsObjects="380" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="408" Mapping="840" Parent="2" RestrictsObjects="397" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="425" Mapping="840" Parent="2" RestrictsObjects="414" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="442" Mapping="840" Parent="2" RestrictsObjects="431" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="459" Mapping="840" Parent="2" RestrictsObjects="448" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="476" Mapping="840" Parent="2" RestrictsObjects="465" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="493" Mapping="840" Parent="2" RestrictsObjects="482" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="510" Mapping="840" Parent="2" RestrictsObjects="499" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="527" Mapping="840" Parent="2" RestrictsObjects="516" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="544" Mapping="840" Parent="2" RestrictsObjects="533" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="561" Mapping="840" Parent="2" RestrictsObjects="550" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="578" Mapping="840" Parent="2" RestrictsObjects="567" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="595" Mapping="840" Parent="2" RestrictsObjects="584" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="612" Mapping="840" Parent="2" RestrictsObjects="601" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="629" Mapping="840" Parent="2" RestrictsObjects="618" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="646" Mapping="840" Parent="2" RestrictsObjects="635" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="663" Mapping="840" Parent="2" RestrictsObjects="652" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="680" Mapping="840" Parent="2" RestrictsObjects="669" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="697" Mapping="840" Parent="2" RestrictsObjects="686" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="714" Mapping="840" Parent="2" RestrictsObjects="703" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="731" Mapping="840" Parent="2" RestrictsObjects="720" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="748" Mapping="840" Parent="2" RestrictsObjects="737" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="765" Mapping="840" Parent="2" RestrictsObjects="754" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="782" Mapping="840" Parent="2" RestrictsObjects="771" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="799" Mapping="840" Parent="2" RestrictsObjects="788" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="816" Mapping="840" Parent="2" RestrictsObjects="805" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="17" Mapping="840" Parent="2" RestrictsObjects="5" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="341" Mapping="840" Parent="2" RestrictsObjects="329" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="324" Mapping="840" Parent="2" RestrictsObjects="312" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="307" Mapping="840" Parent="2" RestrictsObjects="295" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="290" Mapping="840" Parent="2" RestrictsObjects="278" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="273" Mapping="840" Parent="2" RestrictsObjects="261" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="256" Mapping="840" Parent="2" RestrictsObjects="244" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="239" Mapping="840" Parent="2" RestrictsObjects="227" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="222" Mapping="840" Parent="2" RestrictsObjects="210" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="205" Mapping="840" Parent="2" RestrictsObjects="193" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="188" Mapping="840" Parent="2" RestrictsObjects="176" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="171" Mapping="840" Parent="2" RestrictsObjects="159" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="120" Mapping="840" Parent="2" RestrictsObjects="108" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="103" Mapping="840" Parent="2" RestrictsObjects="91" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="86" Mapping="840" Parent="2" RestrictsObjects="74" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="69" Mapping="840" Parent="2" RestrictsObjects="57" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="52" Mapping="840" Parent="2" RestrictsObjects="40" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="154" Mapping="840" Parent="2" RestrictsObjects="142" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="137" Mapping="840" Parent="2" RestrictsObjects="125" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="35" Mapping="840" Parent="2" RestrictsObjects="23" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="834" Mapping="840" Parent="2" RestrictsObjects="822" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="358" Mapping="840" Parent="2" RestrictsObjects="346" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="375" Mapping="840" Parent="2" RestrictsObjects="363" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="392" Mapping="840" Parent="2" RestrictsObjects="380" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="409" Mapping="840" Parent="2" RestrictsObjects="397" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="426" Mapping="840" Parent="2" RestrictsObjects="414" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="443" Mapping="840" Parent="2" RestrictsObjects="431" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="460" Mapping="840" Parent="2" RestrictsObjects="448" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="477" Mapping="840" Parent="2" RestrictsObjects="465" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="494" Mapping="840" Parent="2" RestrictsObjects="482" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="511" Mapping="840" Parent="2" RestrictsObjects="499" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="528" Mapping="840" Parent="2" RestrictsObjects="516" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="545" Mapping="840" Parent="2" RestrictsObjects="533" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="562" Mapping="840" Parent="2" RestrictsObjects="550" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="579" Mapping="840" Parent="2" RestrictsObjects="567" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="596" Mapping="840" Parent="2" RestrictsObjects="584" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="613" Mapping="840" Parent="2" RestrictsObjects="601" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="630" Mapping="840" Parent="2" RestrictsObjects="618" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="647" Mapping="840" Parent="2" RestrictsObjects="635" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="664" Mapping="840" Parent="2" RestrictsObjects="652" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="681" Mapping="840" Parent="2" RestrictsObjects="669" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="698" Mapping="840" Parent="2" RestrictsObjects="686" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="715" Mapping="840" Parent="2" RestrictsObjects="703" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="732" Mapping="840" Parent="2" RestrictsObjects="720" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="749" Mapping="840" Parent="2" RestrictsObjects="737" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="766" Mapping="840" Parent="2" RestrictsObjects="754" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="783" Mapping="840" Parent="2" RestrictsObjects="771" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="800" Mapping="840" Parent="2" RestrictsObjects="788" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="817" Mapping="840" Parent="2" RestrictsObjects="805" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="12" Mapping="840" Parent="2" RestrictsObjects="5" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="336" Mapping="840" Parent="2" RestrictsObjects="329" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="319" Mapping="840" Parent="2" RestrictsObjects="312" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="302" Mapping="840" Parent="2" RestrictsObjects="295" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="285" Mapping="840" Parent="2" RestrictsObjects="278" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="268" Mapping="840" Parent="2" RestrictsObjects="261" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="251" Mapping="840" Parent="2" RestrictsObjects="244" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="234" Mapping="840" Parent="2" RestrictsObjects="227" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="217" Mapping="840" Parent="2" RestrictsObjects="210" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="200" Mapping="840" Parent="2" RestrictsObjects="193" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="183" Mapping="840" Parent="2" RestrictsObjects="176" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="166" Mapping="840" Parent="2" RestrictsObjects="159" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="115" Mapping="840" Parent="2" RestrictsObjects="108" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="98" Mapping="840" Parent="2" RestrictsObjects="91" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="81" Mapping="840" Parent="2" RestrictsObjects="74" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="64" Mapping="840" Parent="2" RestrictsObjects="57" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="47" Mapping="840" Parent="2" RestrictsObjects="40" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="149" Mapping="840" Parent="2" RestrictsObjects="142" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="132" Mapping="840" Parent="2" RestrictsObjects="125" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="30" Mapping="840" Parent="2" RestrictsObjects="23" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="829" Mapping="840" Parent="2" RestrictsObjects="822" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="353" Mapping="840" Parent="2" RestrictsObjects="346" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="370" Mapping="840" Parent="2" RestrictsObjects="363" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="387" Mapping="840" Parent="2" RestrictsObjects="380" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="404" Mapping="840" Parent="2" RestrictsObjects="397" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="421" Mapping="840" Parent="2" RestrictsObjects="414" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="438" Mapping="840" Parent="2" RestrictsObjects="431" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="455" Mapping="840" Parent="2" RestrictsObjects="448" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="472" Mapping="840" Parent="2" RestrictsObjects="465" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="489" Mapping="840" Parent="2" RestrictsObjects="482" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="506" Mapping="840" Parent="2" RestrictsObjects="499" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="523" Mapping="840" Parent="2" RestrictsObjects="516" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="540" Mapping="840" Parent="2" RestrictsObjects="533" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="557" Mapping="840" Parent="2" RestrictsObjects="550" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="574" Mapping="840" Parent="2" RestrictsObjects="567" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="591" Mapping="840" Parent="2" RestrictsObjects="584" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="608" Mapping="840" Parent="2" RestrictsObjects="601" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="625" Mapping="840" Parent="2" RestrictsObjects="618" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="642" Mapping="840" Parent="2" RestrictsObjects="635" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="659" Mapping="840" Parent="2" RestrictsObjects="652" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="676" Mapping="840" Parent="2" RestrictsObjects="669" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="693" Mapping="840" Parent="2" RestrictsObjects="686" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="710" Mapping="840" Parent="2" RestrictsObjects="703" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="727" Mapping="840" Parent="2" RestrictsObjects="720" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="744" Mapping="840" Parent="2" RestrictsObjects="737" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="761" Mapping="840" Parent="2" RestrictsObjects="754" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="778" Mapping="840" Parent="2" RestrictsObjects="771" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="795" Mapping="840" Parent="2" RestrictsObjects="788" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="812" Mapping="840" Parent="2" RestrictsObjects="805" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="13" Mapping="840" Parent="2" RestrictsObjects="5" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="337" Mapping="840" Parent="2" RestrictsObjects="329" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="320" Mapping="840" Parent="2" RestrictsObjects="312" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="303" Mapping="840" Parent="2" RestrictsObjects="295" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="286" Mapping="840" Parent="2" RestrictsObjects="278" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="269" Mapping="840" Parent="2" RestrictsObjects="261" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="252" Mapping="840" Parent="2" RestrictsObjects="244" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="235" Mapping="840" Parent="2" RestrictsObjects="227" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="218" Mapping="840" Parent="2" RestrictsObjects="210" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="201" Mapping="840" Parent="2" RestrictsObjects="193" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="184" Mapping="840" Parent="2" RestrictsObjects="176" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="167" Mapping="840" Parent="2" RestrictsObjects="159" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="116" Mapping="840" Parent="2" RestrictsObjects="108" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="99" Mapping="840" Parent="2" RestrictsObjects="91" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="82" Mapping="840" Parent="2" RestrictsObjects="74" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="65" Mapping="840" Parent="2" RestrictsObjects="57" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="48" Mapping="840" Parent="2" RestrictsObjects="40" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="150" Mapping="840" Parent="2" RestrictsObjects="142" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="133" Mapping="840" Parent="2" RestrictsObjects="125" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="31" Mapping="840" Parent="2" RestrictsObjects="23" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="830" Mapping="840" Parent="2" RestrictsObjects="822" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="354" Mapping="840" Parent="2" RestrictsObjects="346" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="371" Mapping="840" Parent="2" RestrictsObjects="363" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="388" Mapping="840" Parent="2" RestrictsObjects="380" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="405" Mapping="840" Parent="2" RestrictsObjects="397" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="422" Mapping="840" Parent="2" RestrictsObjects="414" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="439" Mapping="840" Parent="2" RestrictsObjects="431" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="456" Mapping="840" Parent="2" RestrictsObjects="448" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="473" Mapping="840" Parent="2" RestrictsObjects="465" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="490" Mapping="840" Parent="2" RestrictsObjects="482" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="507" Mapping="840" Parent="2" RestrictsObjects="499" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="524" Mapping="840" Parent="2" RestrictsObjects="516" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="541" Mapping="840" Parent="2" RestrictsObjects="533" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="558" Mapping="840" Parent="2" RestrictsObjects="550" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="575" Mapping="840" Parent="2" RestrictsObjects="567" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="592" Mapping="840" Parent="2" RestrictsObjects="584" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="609" Mapping="840" Parent="2" RestrictsObjects="601" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="626" Mapping="840" Parent="2" RestrictsObjects="618" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="643" Mapping="840" Parent="2" RestrictsObjects="635" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="660" Mapping="840" Parent="2" RestrictsObjects="652" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="677" Mapping="840" Parent="2" RestrictsObjects="669" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="694" Mapping="840" Parent="2" RestrictsObjects="686" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="711" Mapping="840" Parent="2" RestrictsObjects="703" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="728" Mapping="840" Parent="2" RestrictsObjects="720" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="745" Mapping="840" Parent="2" RestrictsObjects="737" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="762" Mapping="840" Parent="2" RestrictsObjects="754" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="779" Mapping="840" Parent="2" RestrictsObjects="771" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="796" Mapping="840" Parent="2" RestrictsObjects="788" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="813" Mapping="840" Parent="2" RestrictsObjects="805" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="14" Mapping="840" Parent="2" RestrictsObjects="5" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="338" Mapping="840" Parent="2" RestrictsObjects="329" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="321" Mapping="840" Parent="2" RestrictsObjects="312" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="304" Mapping="840" Parent="2" RestrictsObjects="295" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="287" Mapping="840" Parent="2" RestrictsObjects="278" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="270" Mapping="840" Parent="2" RestrictsObjects="261" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="253" Mapping="840" Parent="2" RestrictsObjects="244" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="236" Mapping="840" Parent="2" RestrictsObjects="227" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="219" Mapping="840" Parent="2" RestrictsObjects="210" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="202" Mapping="840" Parent="2" RestrictsObjects="193" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="185" Mapping="840" Parent="2" RestrictsObjects="176" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="168" Mapping="840" Parent="2" RestrictsObjects="159" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="117" Mapping="840" Parent="2" RestrictsObjects="108" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="100" Mapping="840" Parent="2" RestrictsObjects="91" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="83" Mapping="840" Parent="2" RestrictsObjects="74" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="66" Mapping="840" Parent="2" RestrictsObjects="57" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="49" Mapping="840" Parent="2" RestrictsObjects="40" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="151" Mapping="840" Parent="2" RestrictsObjects="142" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="134" Mapping="840" Parent="2" RestrictsObjects="125" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="32" Mapping="840" Parent="2" RestrictsObjects="23" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="831" Mapping="840" Parent="2" RestrictsObjects="822" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="355" Mapping="840" Parent="2" RestrictsObjects="346" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="372" Mapping="840" Parent="2" RestrictsObjects="363" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="389" Mapping="840" Parent="2" RestrictsObjects="380" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="406" Mapping="840" Parent="2" RestrictsObjects="397" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="423" Mapping="840" Parent="2" RestrictsObjects="414" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="440" Mapping="840" Parent="2" RestrictsObjects="431" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="457" Mapping="840" Parent="2" RestrictsObjects="448" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="474" Mapping="840" Parent="2" RestrictsObjects="465" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="491" Mapping="840" Parent="2" RestrictsObjects="482" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="508" Mapping="840" Parent="2" RestrictsObjects="499" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="525" Mapping="840" Parent="2" RestrictsObjects="516" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="542" Mapping="840" Parent="2" RestrictsObjects="533" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="559" Mapping="840" Parent="2" RestrictsObjects="550" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="576" Mapping="840" Parent="2" RestrictsObjects="567" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="593" Mapping="840" Parent="2" RestrictsObjects="584" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="610" Mapping="840" Parent="2" RestrictsObjects="601" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="627" Mapping="840" Parent="2" RestrictsObjects="618" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="644" Mapping="840" Parent="2" RestrictsObjects="635" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="661" Mapping="840" Parent="2" RestrictsObjects="652" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="678" Mapping="840" Parent="2" RestrictsObjects="669" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="695" Mapping="840" Parent="2" RestrictsObjects="686" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="712" Mapping="840" Parent="2" RestrictsObjects="703" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="729" Mapping="840" Parent="2" RestrictsObjects="720" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="746" Mapping="840" Parent="2" RestrictsObjects="737" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="763" Mapping="840" Parent="2" RestrictsObjects="754" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="780" Mapping="840" Parent="2" RestrictsObjects="771" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="797" Mapping="840" Parent="2" RestrictsObjects="788" RestrictsProperties="FractionalXYZ"/>
+						<CompleteRestriction ID="814" Mapping="840" Parent="2" RestrictsObjects="805" RestrictsProperties="FractionalXYZ"/>
+						<SpaceGroup ID="21" Parent="2" Children="841" DisplayStyle="Solid" AVector="21.14,5.32907051820075e-015,0" BVector="-10.57,18.3077770360031,0" CVector="0,2.05221308693269e-015,19.35" Color="255,255,255,255" OrientationBase="A along X, B in XY plane" Centering="3D Primitive-Centered" Lattice="3D Triclinic" GroupName="P1" Operators="1,0,0,0,0,1,0,0,0,0,1,0" DisplayRange="0,1,0,1,0,1" LineThickness="2" CylinderRadius="0.2" LabelAxes="1" ActiveSystem="2" ITNumber="1" LongName="P 1" Qualifier="Origin-1" SchoenfliesName="C1-1" System="Triclinic" Class="1"/>
+						<ReciprocalLattice3D ID="841" Parent="21" Visible="0"/>
+					</IdentityMapping>
+					<ImageMapping ID="842" Element="1,0,0,1,0,1,0,0,0,0,1,0" Constraint="1,0,0,0,0,1,0,0,0,0,1,0" MappedObjects="ci(211):843,34x0,844,34x0,845,34x0,846,34x0,847,34x0,848,34x0,849" NumImages="7">
+						<Atom3d ID="843" Mapping="842" ImageOf="4"/>
+						<Atom3d ID="844" Mapping="842" ImageOf="124"/>
+						<Atom3d ID="845" Mapping="842" ImageOf="243"/>
+						<Atom3d ID="846" Mapping="842" ImageOf="362"/>
+						<Atom3d ID="847" Mapping="842" ImageOf="481"/>
+						<Atom3d ID="848" Mapping="842" ImageOf="600"/>
+						<Atom3d ID="849" Mapping="842" ImageOf="719"/>
+					</ImageMapping>
+					<ImageMapping ID="850" Element="1,0,0,0,0,1,0,1,0,0,1,0" Constraint="1,0,0,0,0,1,0,0,0,0,1,0" MappedObjects="ci(31):851,4x0,852,4x0,853,4x0,854,4x0,855,4x0,856,4x0,857" NumImages="7">
+						<Atom3d ID="851" Mapping="850" ImageOf="4"/>
+						<Atom3d ID="852" Mapping="850" ImageOf="22"/>
+						<Atom3d ID="853" Mapping="850" ImageOf="39"/>
+						<Atom3d ID="854" Mapping="850" ImageOf="56"/>
+						<Atom3d ID="855" Mapping="850" ImageOf="73"/>
+						<Atom3d ID="856" Mapping="850" ImageOf="90"/>
+						<Atom3d ID="857" Mapping="850" ImageOf="107"/>
+					</ImageMapping>
+					<ImageMapping ID="858" Element="1,0,0,1,0,1,0,1,0,0,1,0" Constraint="1,0,0,0,0,1,0,0,0,0,1,0" MappedObjects="859" NumImages="1">
+						<Atom3d ID="859" Mapping="858" ImageOf="4"/>
+					</ImageMapping>
+					<MappingRepairs NumRepairs="0"/>
+				</MappingFamily>
+				<InfiniteMapping ID="3" Element="1,0,0,0,0,1,0,0,0,0,1,0" MappedObjects="2"/>
+			</MappingSet>
+		</SymmetrySystem>
+	</AtomisticTreeRoot>
+</XSD>

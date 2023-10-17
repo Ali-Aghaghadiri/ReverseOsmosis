@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="latin1"?>
+<EXTENSION VERSION="17.1">
+<LOGICS>
+<LOGICITEM NAME="AtomSketcher">
+	<STATE NAME="SMSketcher.AtomSketcher" VERSION="17.1">
+	<PROPERTIES>
+	<PROPERTY NAME="TargetElement">
+	<VALUE>C</VALUE>
+	</PROPERTY>
+	</PROPERTIES>
+	</STATE>
+</LOGICITEM>
+</LOGICS>
+</EXTENSION>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="latin1"?>
+<EXTENSION VERSION="17.1">
+<LOGICS>
+<LOGICITEM NAME="BFDH">
+</LOGICITEM>
+<LOGICITEM NAME="BondIncrement">
+	<STATE NAME="BondIncrement" VERSION="17.1">
+	<PROPERTIES>
+	</PROPERTIES>
+	</STATE>
+</LOGICITEM>
+<LOGICITEM NAME="BondOrder">
+	<STATE NAME="UFFBondOrder" VERSION="17.1">
+	<PROPERTIES>
+	</PROPERTIES>
+	</STATE>
+</LOGICITEM>
+<LOGICITEM NAME="ChargeEditor">
+	<STATE NAME="SMXCharge.ChargeEditor" VERSION="17.1">
+	<PROPERTIES>
+	</PROPERTIES>
+	</STATE>
+</LOGICITEM>
+<LOGICITEM NAME="ChargeGasteiger">
+	<STATE NAME="SMXCharge.ChargeGasteiger" VERSION="17.1">
+	<PROPERTIES>
+	</PROPERTIES>
+	</STATE>
+</LOGICITEM>
+<LOGICITEM NAME="ChargeGroups">
+	<STATE NAME="Charge Groups" VERSION="17.1">
+	<PROPERTIES>
+	</PROPERTIES>
+	</STATE>
+</LOGICITEM>
+<LOGICITEM NAME="ChargeQEq">
+	<STATE NAME="SMXCharge.ChargeQEq" VERSION="17.1">
+	<PROPERTIES>
+	</PROPERTIES>
+	</STATE>
+</LOGICITEM>
+<LOGICITEM NAME="Eatt">
+	<STATE NAME="AttachmentEnergy" VERSION="17.1">
+	<PROPERTIES>
+	</PROPERTIES>
+	</STATE>
+</LOGICITEM>
+<LOGICITEM NAME="Eeq">
+	<STATE NAME="SurfaceEnergy" VERSION="17.1">
+	<PROPERTIES>
+	</PROPERTIES>
+	</STATE>
+</LOGICITEM>
+<LOGICITEM NAME="FaceListGenerator">
+	<STATE NAME="FaceListGenerator" VERSION="17.1">
+	<PROPERTIES>
+	</PROPERTIES>
+	</STATE>
+</LOGICITEM>
+<LOGICITEM NAME="FlatSurfaceGenerator">
+	<STATE NAME="FlatSurfaceGeneratorState" VERSION="17.1">
+	<PROPERTIES>
+	</PROPERTIES>
+	</STATE>
+</LOGICITEM>
+<LOGICITEM NAME="ForcefieldChooser">
+	<STATE NAME="ForciteForcefieldChooser" VERSION="17.1">
+	<PROPERTIES>
+	</PROPERTIES>
+	</STATE>
+</LOGICITEM>
+<LOGICITEM NAME="ForcefieldPreparation">
+	<STATE NAME="Forcefield preparation" VERSION="17.1">
+	<PROPERTIES>
+	<PROPERTY NAME="ChargeAssignment">
+	<VALUE>1</VALUE>
+	</PROPERTY>
+	</PROPERTIES>
+	</STATE>
+</LOGICITEM>
+<LOGICITEM NAME="HabitGenerator">
+	<STATE NAME="HabitGenerator" VERSION="17.1">
+	<PROPERTIES>
+	</PROPERTIES>
+	</STATE>
+</LOGICITEM>
+<LOGICITEM NAME="MorphologyClient">
+	<STATE NAME="MorphologyClient" VERSION="17.1">
+	<PROPERTIES>
+	</PROPERTIES>
+	</STATE>
+</LOGICITEM>
+<LOGICITEM NAME="MorphologyServer">
+	<STATE NAME="MorphologyServer" VERSION="17.1">
+	<PROPERTIES>
+	</PROPERTIES>
+	</STATE>
+</LOGICITEM>
+<LOGICITEM NAME="MorphologyTaskBFDH">
+</LOGICITEM>
+<LOGICITEM NAME="MorphologyTaskEquilibrium">
+</LOGICITEM>
+<LOGICITEM NAME="MorphologyTaskGenerateFaceList">
+</LOGICITEM>
+<LOGICITEM NAME="MorphologyTaskGenerateHabit">
+</LOGICITEM>
+<LOGICITEM NAME="MorphologyTaskGrowth">
+</LOGICITEM>
+<LOGICITEM NAME="MorphologyTaskReportHabitProperties">
+</LOGICITEM>
+<LOGICITEM NAME="MphClassicalEnergy">
+	<STATE NAME="ClassicalEnergy - Classical Energy Server" VERSION="17.1">
+	<PROPERTIES>
+	<PROPERTY NAME="doNotInvokePreparationComponent">
+	<VALUE>false</VALUE>
+	</PROPERTY>
+	</PROPERTIES>
+	</STATE>
+</LOGICITEM>
+<LOGICITEM NAME="MphJobHandler">
+</LOGICITEM>
+<LOGICITEM NAME="MphJobLauncher">
+	<STATE NAME="MorphologyJobLauncherState" VERSION="17.1">
+	<PROPERTIES>
+	</PROPERTIES>
+	</STATE>
+</LOGICITEM>
+<LOGICITEM NAME="OFFAtomTyping">
+	<STATE NAME="OFFAtomTyping" VERSION="17.1">
+	<PROPERTIES>
+	</PROPERTIES>
+	</STATE>
+</LOGICITEM>
+<LOGICITEM NAME="PotentialAtomTyping">
+	<STATE NAME="PotentialAtomTyping" VERSION="17.1">
+	<PROPERTIES>
+	</PROPERTIES>
+	</STATE>
+</LOGICITEM>
+</LOGICS>
+</EXTENSION>
