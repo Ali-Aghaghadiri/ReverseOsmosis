@@ -1,0 +1,65 @@
+# NVE Equilibrium
+log             log/log.RO.lammps
+
+# Initialization
+kim             init    LJ_ElliottAkerson_2015_Universal__MO_959249795837_003 real
+dimension       3
+boundary        p p f
+atom_style      full
+
+# Simulation Properties
+variable    PistonVelocity  equal  0.1      # Velocity of the piston movement.
+variable    TimeStep        equal  0.1
+
+# Variables
+variable    T               equal  298.15   # Room tempreture.
+variable    Liquid_Z_low    equal  6.45     # start of the liquid region.
+variable    Liquid_Z_high   equal  25.0     # end of the liquid region.
+variable    DeltaX          equal  (${Liquid_Z_high}-${Liquid_Z_low})*3/4
+variable    TotalTimeSteps  equal  floor(${DeltaX}/(${PistonVelocity}*${TimeStep}))
+
+# System Definition
+read_data       system/equilibrium.system.data
+
+kim             interactions    C Ca Cl H N Na O Ti
+neigh_modify    one             10000
+
+# Define Groups
+group       C       type    1   
+group       H       type    4   
+group       N       type    5   
+group       O       type    7   
+group       Ti      type    8   
+group       H2O     type    7   4
+group       Ions    type    6   3   2
+
+region      piston  block   INF INF     INF INF     ${Liquid_Z_high} INF
+region      liquid  block   INF INF     INF INF     ${Liquid_Z_low}  ${Liquid_Z_high}
+region      bottom  block   INF INF     INF INF     INF              ${Liquid_Z_low}
+
+group       bottom  region  bottom
+group       piston  region  piston
+group       liquid  region  liquid
+
+# Settings
+velocity    all     create  $T 49284    rot yes dist gaussian
+fix    NVE  all     nve
+fix    MEMBRANE     bottom  setforce    0.0 0.0  0.0
+fix    PISTON       piston  move linear 0.0 0.0 -${PistonVelocity}
+
+# Visualization
+dump            1   all     xyz 50 visual/reverse.osmosis.xyz
+dump_modify     1   element C Ca Cl HW N Na OW Ti
+
+# Simulation
+timestep        ${TimeStep}
+thermo          100
+thermo_style    multi
+run             ${TotalTimeSteps}
+
+# compute     H2O_count   H2O  reduce/region  bottom
+# compute     Ions_count  Ions reduce/region  bottom
+
+# Finalization
+write_data      system/RO.system.data
+# write_restart   system/RO.system.rest
