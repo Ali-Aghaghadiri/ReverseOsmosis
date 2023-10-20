@@ -1,5 +1,6 @@
 import os
 import tempfile
+import subprocess
 
 
 def num_water_molecules(x: float, y: float, z: float) -> int:
@@ -12,9 +13,10 @@ def num_water_molecules(x: float, y: float, z: float) -> int:
     D = 1000  # Density of water at room temperature (kg/m^3)
     M = 18.01528  # Molar mass of water (g/mol)
     V = (x * y * z) * A**3  # System volume (m^3)
-    m = (D * V) * 1e3 # Mass of water (g)
+    m = (D * V) * 1e3  # Mass of water (g)
     moles_water = m / M  # moles of water in the system
     return int(moles_water * N)  # number of water molecules
+
 
 def num_ions(concentration: float, water_count: int):
     """
@@ -34,20 +36,24 @@ def num_ions(concentration: float, water_count: int):
     moles_ions = concentration * volume_water_L  # moles of ions
     return int(moles_ions * N)  # Number of ions
 
-def solvate(x: float, y: float, z: float, tol: float = 2.0, directory: str = "./mixture/", **kwargs):
-    """Returns packmol input temp file"""
+
+def solvate(x: float, y: float, z: float, tol: float = 2.0, directory: str = "./mixture/", output: str = "solvated.pdb", packmol: str = "packmol", **kwargs) -> None:
     directory = os.path.abspath(directory)
+    output = os.path.abspath(output)
+
     num_waters = num_water_molecules(x, y, z)
+
     inp = tempfile.NamedTemporaryFile(mode="w+", suffix="inp")
     inp.write("\n".join([
         f"tolerance {tol}",
         "filetype pdb",
-        "output solvated.pdb\n",
+        f"output {output}\n",
         f"structure {directory}/H2O.pdb",
         f"  number {num_waters}",
         f"  inside box 0. 0. 0. {x} {y} {z}\n"
         "end structure\n",
     ]))
+
     for ion, concentration in kwargs.items():
         ions_count = num_ions(concentration, num_waters)
         inp.writelines([
@@ -59,22 +65,27 @@ def solvate(x: float, y: float, z: float, tol: float = 2.0, directory: str = "./
     inp.seek(0)
     print(inp.read())
     inp.seek(0)
-    return inp
+    subprocess.call(packmol, stdin=inp)
+    inp.close
 
 
 if __name__ == "__main__":
-    import subprocess
     import argparse
 
-    ap = argparse.ArgumentParser("Solution", description="Disolve molecules in water.")
+    ap = argparse.ArgumentParser(
+        "Solution", description="Disolve molecules in water.")
     size_ap = ap.add_mutually_exclusive_group(required=True)
     soluble_ap = ap.add_mutually_exclusive_group(required=True)
 
-    ap.add_argument("-d", "--soluble-dir", dest="directory", default="./mixture/", help="Looking for solubles in this directory.")
-    ap.add_argument("-t", "--tolerance", type=float, default=2.0, help="Distance tolerance.")
-    ap.add_argument("-o", "--out", default="./solvated.pdb", help="Output pdb file. Default is ./solvated.pdb")
+    ap.add_argument("-d", "--soluble-dir", dest="directory",
+                    default="./mixture/", help="Looking for solubles in this directory.")
+    ap.add_argument("-t", "--tolerance", type=float,
+                    default=2.0, help="Distance tolerance.")
+    ap.add_argument("-o", "--out", default="./solvated.pdb",
+                    help="Output pdb file. Default is ./solvated.pdb")
     size_ap.add_argument("-s", "--size", type=float, nargs=3)
-    soluble_ap.add_argument("-a", "--add", dest="solubles", nargs=2, action="append", help="Specify type and concentration.")
+    soluble_ap.add_argument("-a", "--add", dest="solubles", nargs=2,
+                            action="append", help="Specify type and concentration.")
 
     arguments = ap.parse_args()
 
@@ -86,7 +97,6 @@ if __name__ == "__main__":
         x, y, z,
         arguments.tolerance,
         arguments.directory,
+        arguments.out,
         **solubles
     )
-
-    subprocess.call("packmol", stdin=packmol_input)
