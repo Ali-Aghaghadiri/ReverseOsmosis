@@ -25,7 +25,7 @@ system_ap = ap.add_argument_group(
 # Arguments
 ap.add_argument("-x", "--executable", default="packmol",
                 help="Packmol executable path.")
-ap.add_argument("-o", "--out", default="./ROSystem", help="Output file.")
+ap.add_argument("-o", "--out", default="./ROSystem.pdb", help="Output file.")
 ap.add_argument("-t", "--tolerance", default=2.0, help="Set tolerance.")
 ap.add_argument("--show", action="store_true", help="View the packing result.")
 
@@ -129,7 +129,7 @@ def lammps_data(ROSystem: str):
     #       it might be due to the stdin pipe which
     #       is waiting for more input!
     print("\npress ENTER\n")
-    stdout = subprocess.check_output("vmd -nt -dispdev text -eofexit",
+    stdout = subprocess.check_output(["vmd", "-nt", "-dispdev", "text", "-eofexit"],
                                      stdin=inp, text=True)
     inp.close()
     print(stdout)
