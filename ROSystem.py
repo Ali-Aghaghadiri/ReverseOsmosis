@@ -5,6 +5,7 @@ import subprocess
 import tempfile
 import os
 from ase.visualize import view
+from solution import solvate
 
 
 # Argument parser
@@ -32,54 +33,64 @@ membrane_ap.add_argument(
     "-m", "--membrane", required=True, help="Membrane file.")
 piston_ap.add_argument("-p", "--piston", required=True, help="Piston file.")
 mixture_ap.add_argument("-M", "--molecule", nargs=2, dest="molecules", action="append",
-                        required=True, help="Mixture files and count.")
+                        required=True, help="Mixture compounds and concentration.")
 system_ap.add_argument("-s", "--separation", required=True, type=float,
                        help="Separation of the piston and membrane.")
 
 
 def pack(packmol: str, membrane: str, piston: str, separation: float,
-         molecules: list[str, int], output: str, tolerance=2.0):
-    """insert mixture molecules using `packmol` executable."""
-    inp = tempfile.NamedTemporaryFile(mode="w+", suffix="inp")
-    out_type = os.path.basename(output).split(".")[-1]
-
-    atoms = read(membrane)
-    xh, yh, zl = np.amax(atoms.positions, axis=0)
-    xl, yl, _ = np.amin(atoms.positions, axis=0)
-    zh = separation
-
-    inp.write("\n# packmol input\n")
-    inp.write(f"tolerance {tolerance}\n")
-    inp.write(f"output {output}\n")
-    inp.write(f"filetype {out_type}\n\n")
-    # membrane structure
-    inp.writelines([
-        f"structure {membrane}\n",
-        "  number 1\n",
-        f"  fixed 0. 0. 0. 0. 0. 0.\n",
-        "end structure\n\n",
-    ])
-    # mixture structures
-    for molecule, count in molecules:
-        inp.writelines([
-            f"structure {molecule}\n",
-            f"  number {int(count)}\n",
-            f"  inside box {xl} {yl} {zl} {xh} {yh} {zh}\n",
-            "end structure\n\n",
-        ])
-    # piston structure
-    inp.writelines([
-        f"structure {piston}\n",
-        "  number 1\n",
-        f"  fixed 0. 0. {zh} 0. 0. 0.\n",
-        "end structure\n",
-    ])
-    inp.seek(0)
-    print(inp.read())
-    inp.seek(0)
-
-    subprocess.call(packmol, stdin=inp)
-    inp.close()
+         molecules: list[str, float], output: str, tolerance=2.0):
+    """
+    Insert mixture molecules using `packmol` executable.
+    
+    Parameters:
+    - packmol: Path to the packmol executable.
+    - membrane: Path to the file containing the membrane Atoms object.
+    - piston: Path to the file containing the piston Atoms object.
+    - separation: Distance between the piston and membrane.
+    - molecules: List of molecule types and their quantities.
+    - output: Path to the output file.
+    - tolerance: Tolerance for packing molecules (default is 2.0).
+    
+    Returns:
+    None. Writes the packed system to the output file.
+    """
+    # parameter corrections
+    directory = os.path.dirname(output)
+    output_name = os.path.basename(output)
+    solution_name = "solution_" + output_name
+    solution_output = os.path.join(directory, solution_name)
+    molecules = {k: float(v) for k, v in molecules}
+    # find center of the membrane.
+    membrane_atoms = read(membrane)
+    membrane_maximum = membrane_atoms.positions.max(axis=0)
+    membrane_minimum = membrane_atoms.positions.min(axis=0)
+    xc, yc, _ = (membrane_maximum + membrane_minimum) / 2
+    zc = membrane_maximum[2]
+    # calculate size of the system and generate a mixture.
+    dx, dy, _ = membrane_maximum - membrane_minimum
+    dz = separation
+    solvate(dx, dy, dz, tolerance, output=solution_output,
+            packmol=packmol, **molecules)
+    # translate the bottom of the mixture on top of membrane.
+    solution_atoms = read(solution_output)
+    solution_maximum = solution_atoms.positions.max(axis=0)
+    solution_minimum = solution_atoms.positions.min(axis=0)
+    sx, sy, _ = (solution_maximum + solution_minimum) / 2
+    sz = solution_minimum[2]
+    solution_shift = (xc - sx, yc - sy, zc - sz + (tolerance))
+    solution_atoms.translate(solution_shift)
+    # translate the bottom of the piston on top of the mixture.
+    piston_atoms = read(piston)
+    piston_maximum = piston_atoms.positions.max(axis=0)
+    piston_minimum = piston_atoms.positions.min(axis=0)
+    px, py, _ = (piston_maximum + piston_minimum) / 2
+    pz = piston_minimum[2]
+    piston_shift = (xc - px, yc - py, zc - pz + separation + (2*tolerance))
+    piston_atoms.translate(piston_shift)
+    # combine the system
+    system_atoms = membrane_atoms + solution_atoms + piston_atoms
+    system_atoms.write(output)
 
 
 def lammps_data(ROSystem: str):
