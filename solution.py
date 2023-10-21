@@ -37,7 +37,7 @@ def num_ions(concentration: float, water_count: int):
     return int(moles_ions * N)  # Number of ions
 
 
-def solvate(x: float, y: float, z: float, tol: float = 2.0, directory: str = "./mixture/", output: str = "solvated.pdb", packmol: str = "packmol", **kwargs) -> None:
+def solvate(x: float, y: float, z: float, tol: float = 2.0, directory: str = "./mixture/", output: str = "solvated.pdb", packmol: str = "packmol", **molecules) -> None:
     directory = os.path.abspath(directory)
     output = os.path.abspath(output)
 
@@ -54,7 +54,7 @@ def solvate(x: float, y: float, z: float, tol: float = 2.0, directory: str = "./
         "end structure\n",
     ]))
 
-    for ion, concentration in kwargs.items():
+    for ion, concentration in molecules.items():
         ions_count = num_ions(concentration, num_waters)
         inp.writelines([
             f"\nstructure {directory}/{ion}.pdb\n"
