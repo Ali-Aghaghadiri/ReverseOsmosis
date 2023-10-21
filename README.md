@@ -69,7 +69,7 @@ Our molecules are in `mixture` directory. Also the piston and membranes are in `
 
 To create such system we can use `ROSystem.py` as followed:
 ```
-python3 .\ROSystem.py -m .\membrane\Ti3CN.mono.vacancy1.pdb -p .\piston\Ti3CN.mono.pdb  -s 25 -M Ca.pdb 3 -M Cl.pdb 3 -M Na.pdb 3 --show
+python3 .\ROSystem.py -m .\membrane\Ti3CN.mono.vacancy1.pdb -p .\piston\Ti3CN.mono.pdb  -s 25 -M Ca 3 -M Cl 3 -M Na 3 --show
 ```
 
 This command specifies membrane, piston and mixture compounds and relevant count for each type. And finally saves the result in a `pdb` file.
