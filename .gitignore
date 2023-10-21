@@ -153,3 +153,7 @@ cython_debug/
 
 # vscode
 .vscode
+
+# lammps log
+log.lammps
+log.*.lammps
