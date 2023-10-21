@@ -3,7 +3,7 @@ contourpy==1.1.1
 cycler==0.12.1
 fonttools==4.43.1
 kiwisolver==1.4.5
-lammps @ file:///usr/share/lammps/src/lammps-2023.8.2-cp310-cp310-linux_x86_64.whl
+lammps==2023.8.2.1.0
 matplotlib==3.8.0
 mpi4py==3.1.5
 numpy==1.26.1
