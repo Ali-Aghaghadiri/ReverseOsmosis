@@ -35,8 +35,7 @@ output_ap.add_argument("--show", default="hex",
                        choices=["hex", "cube"], help="View results")
 
 manipulate_ap = ap.add_argument_group("Manipulation")
-manipulate_ap.add_argument(
-    "--drill", type=int, help="Make vacancy.")
+manipulate_ap.add_argument("--drill", type=float, help="Make vacancy.")
 
 atomic_positions_mx_mono = [
     (0.0,     0.0,     0.5),  # Ti
@@ -74,15 +73,15 @@ atomic_positions_max = [
     (0.66667, 0.33333, 0.58333),  # N
 ]
 
-
-def drill(crystal: Atoms, radius: int):
-    radius *= a
-    xs = len(crystal.positions[:,0]) / 2
-    ys = len(crystal.positions[:,1]) / 2
-    center = (xs*a, ys*a)
-    indices = [i for i, pos in enumerate(crystal.positions[:,:2]) if np.linalg.norm(pos - center) <= radius]
-    for index in sorted(indices, reverse=True):
-        del crystal[index]
+def drill(atoms: Atoms, radius: float):
+    # Calculate the center of the atoms object
+    xc = atoms.positions[:, 0].max() / 2
+    yc = atoms.positions[:, 1].max() / 2
+    center = np.array([xc, yc])
+    # Create a mask for atoms within the given radius from the center in xy-plane
+    mask = np.linalg.norm(atoms.positions[:, :2] - center, axis=1) < radius
+    # Remove the atoms within the given radius from the center
+    del atoms[mask]
 
 
 def shrink(crystal: Atoms) -> None:
@@ -147,10 +146,10 @@ if __name__ == "__main__":
                                           size=size, cellpar=max_cellpar, symprec=0.1, onduplicates="replace")
         logging.info("MX multi layer created.")
 
-    # if arguments.drill:
-    #     for c in bucket.values():
-    #         radius = arguments.drill
-    #         drill(c, radius)
+    if arguments.drill:
+        for c in bucket.values():
+            radius = arguments.drill
+            drill(c, radius)
 
     for f, c in bucket.items():
         if arguments.show == "cube":
