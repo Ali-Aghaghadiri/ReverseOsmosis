@@ -1,19 +1,30 @@
 import os
 import tempfile
 import subprocess
+import numpy as np
 
 
-def num_water_molecules(x: float, y: float, z: float) -> int:
+densities = np.array([
+    [0.1, 999.85], [1, 999.9], [4, 999.97], [10, 999.7], [15, 999.1],
+    [20, 998.21], [25, 997.05], [30, 995.65], [35, 994.03], [40, 992.22],
+    [45, 990.21], [50, 988.04], [55, 985.69], [60, 983.2], [65, 980.55],
+    [70, 977.76], [75, 974.84], [80, 971.79], [85, 968.61], [90, 965.31],
+    [95, 961.89], [100, 958.35]
+])
+
+def num_water_molecules(x: float, y: float, z: float, temp: float = 298.15) -> int:
     """
-    Estimate the number of water molecules in a volume.
+    Estimate the number of water molecules in a volume at 1 atm pressure.
     x, y, z: volume dimension in angstroms.
+    temp: temperature in Kelvin.
     """
-    A = 1e-10  # Angstrom convert factor
+    A = 1e-10  # Angstrom to meter convert factor
     N = 6.02214076e23  # Avogadro's number
-    D = 1000  # Density of water at room temperature (kg/m^3)
-    M = 18.01528  # Molar mass of water (g/mol)
+    T = temp - 273.15  # Convert to C
+    D = np.interp(T, densities[:, 0], densities[:, 1])  # Density of water at T (kg/m^3)
+    M = 18.01528 * 1e-3  # Molar mass of water (kg/mol)
     V = (x * y * z) * A**3  # System volume (m^3)
-    m = (D * V) * 1e3  # Mass of water (g)
+    m = D * V  # Mass of water (g)
     moles_water = m / M  # moles of water in the system
     return int(moles_water * N)  # number of water molecules
 
