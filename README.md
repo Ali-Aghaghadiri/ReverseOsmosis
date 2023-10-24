@@ -1,3 +1,5 @@
+**KEEP IN MIND THAT THIS REPOSITORY IS UNDER DEVELOPMENT**
+
 # Dependency
 
 Install dependencies using `pip`:
@@ -13,11 +15,17 @@ Also `packmol` and `VMD` are necessary.
 
 To generate the crystal of interest (in our case $Ti_3AlCN$) use `MyCrystal.py` script.
 ```shell
-python3 MyCrystal.py --super-cell 8 7 1 --mx --mono --show cube
+python3 MyCrystal.py --super-cell 16 16 1 --mx --mono --show cube
 ```
-This command line creates a super cell of $Ti_3CN$ MXene phase by eight units in $x$ direction, seven units in $y$ direction and one unit in $z$ direction and represents it in cubic form.
+This command line creates a super cell of $Ti_3CN$ MXene phase by 16 units in $x$ and $y$ directions and 1 unit in $z$ direction. Then represents the crystal in cubic form.
 
 We use this script to design *piston* and *membrane* parts of the system.
+For creating the *membrane* we use `--drill` option:
+
+```shell
+python3 MyCrystal.py --super-cell 16 16 1 --mx --mono --show cube --drill 5.5
+```
+This will *drill* a hole in center of the crystal with radius of `5.5` $\mathring {\mathrm A}$. Or with the diameter of ~ 1 $nm$.
 
 More details is accessible via `-h` or `--help`:
 
@@ -69,7 +77,7 @@ Our molecules are in `mixture` directory. Also the piston and membranes are in `
 
 To create such system we can use `ROSystem.py` as followed:
 ```
-python3 .\ROSystem.py -m .\membrane\Ti3CN.mono.vacancy1.pdb -p .\piston\Ti3CN.mono.pdb  -s 25 -M Ca 3 -M Cl 3 -M Na 3 --show
+python3 ROSystem.py -m membrane/Ti3CN.pdb -p piston/Ti3CN.pdb -s 130 -M Ca 3 -M Cl 3 -M Na 3 -o system/system.pdb --show
 ```
 
 This command specifies membrane, piston and mixture compounds and relevant count for each type. And finally saves the result in a `pdb` file.
