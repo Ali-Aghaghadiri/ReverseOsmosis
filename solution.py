@@ -48,11 +48,11 @@ def num_ions(concentration: float, water_count: int):
     return int(moles_ions * N)  # Number of ions
 
 
-def solvate(x: float, y: float, z: float, tol: float = 2.0, directory: str = "./mixture/", output: str = "solvated.pdb", packmol: str = "packmol", **molecules) -> None:
+def solvate(x: float, y: float, z: float, temperature: float = 298.15, tol: float = 2.0, directory: str = "./mixture/", output: str = "solvated.pdb", packmol: str = "packmol", **molecules) -> None:
     directory = os.path.abspath(directory)
     output = os.path.abspath(output)
 
-    num_waters = num_water_molecules(x, y, z)
+    num_waters = num_water_molecules(x, y, z, temperature)
 
     inp = tempfile.NamedTemporaryFile(mode="w+", suffix="inp")
     inp.write("\n".join([
@@ -83,8 +83,7 @@ def solvate(x: float, y: float, z: float, tol: float = 2.0, directory: str = "./
 if __name__ == "__main__":
     import argparse
 
-    ap = argparse.ArgumentParser(
-        "Solution", description="Disolve molecules in water.")
+    ap = argparse.ArgumentParser("Solution", description="Disolve molecules in water.")
     size_ap = ap.add_mutually_exclusive_group(required=True)
     soluble_ap = ap.add_mutually_exclusive_group(required=True)
 
@@ -94,6 +93,7 @@ if __name__ == "__main__":
                     default=2.0, help="Distance tolerance.")
     ap.add_argument("-o", "--out", default="./solvated.pdb",
                     help="Output pdb file. Default is ./solvated.pdb")
+    ap.add_argument("-T", "--temperature", type=float, help="Solution temperature.")
     size_ap.add_argument("-s", "--size", type=float, nargs=3)
     soluble_ap.add_argument("-a", "--add", dest="solubles", nargs=2,
                             action="append", help="Specify type and concentration.")
@@ -106,6 +106,7 @@ if __name__ == "__main__":
 
     packmol_input = solvate(
         x, y, z,
+        arguments.temperature,
         arguments.tolerance,
         arguments.directory,
         arguments.out,
