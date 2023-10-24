@@ -7,36 +7,6 @@ import logging
 import numpy as np
 
 
-ap = argparse.ArgumentParser(
-    prog="Ti3AlCN",
-    description="Titanium Aluminum Cyanide MAX and MXene crystal maker.",
-    epilog="written by Ali AghaGhadiri")
-
-lattice_ap = ap.add_argument_group("Lattice", "Manipulate lattice parameters")
-lattice_ap.add_argument("-a", default=3.02, type=float,
-                        help="Lattice parameter `a`")
-lattice_ap.add_argument("-c", default=19.35, type=float,
-                        help="Lattice parameter `c`")
-lattice_ap.add_argument("--super-cell", default=[1, 1, 1], dest="size",
-                        type=int, nargs=3, help="Repetition of unitcell")
-
-phase_ap = ap.add_argument_group("Phase", "determine crystal phase.")
-phase_ap.add_argument("--max", action="store_true", help="MAX phase")
-phase_ap.add_argument("--mx", action="store_true", help="MX phase")
-phase_ap.add_argument("--mono-layer", action="store_true", dest="mono",
-                      help="Monolayer Structure")
-
-output_ap = ap.add_argument_group("Output", "Determine the output format.")
-output_ap.add_argument(
-    "--format", choices=["xyz", "pdb"], default="xyz", help="Output format")
-output_ap.add_argument("-o", "--out", help="Output directory",
-                       type=str, dest="directory", default=".")
-output_ap.add_argument("--show", default="hex",
-                       choices=["hex", "cube"], help="View results")
-
-manipulate_ap = ap.add_argument_group("Manipulation")
-manipulate_ap.add_argument("--drill", type=float, help="Make vacancy.")
-
 atomic_positions_mx_mono = [
     (0.0,     0.0,     0.5),  # Ti
     (0.33333, 0.66667, 0.66667),  # Ti
@@ -106,6 +76,37 @@ def make_orthogonal(crystal: Atoms):
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
+
+    ap = argparse.ArgumentParser(
+        prog="Ti3AlCN",
+        description="Titanium Aluminum Cyanide MAX and MXene crystal maker.",
+        epilog="written by Ali AghaGhadiri")
+
+    lattice_ap = ap.add_argument_group("Lattice", "Manipulate lattice parameters")
+    lattice_ap.add_argument("-a", default=3.02, type=float,
+                            help="Lattice parameter `a`")
+    lattice_ap.add_argument("-c", default=19.35, type=float,
+                            help="Lattice parameter `c`")
+    lattice_ap.add_argument("--super-cell", default=[1, 1, 1], dest="size",
+                            type=int, nargs=3, help="Repetition of unitcell")
+
+    phase_ap = ap.add_argument_group("Phase", "determine crystal phase.")
+    phase_ap.add_argument("--max", action="store_true", help="MAX phase")
+    phase_ap.add_argument("--mx", action="store_true", help="MX phase")
+    phase_ap.add_argument("--mono-layer", action="store_true", dest="mono",
+                        help="Monolayer Structure")
+
+    output_ap = ap.add_argument_group("Output", "Determine the output format.")
+    output_ap.add_argument(
+        "--format", choices=["xyz", "pdb"], default="xyz", help="Output format")
+    output_ap.add_argument("-o", "--out", help="Output directory",
+                        type=str, dest="directory", default=".")
+    output_ap.add_argument("--show", default="hex",
+                        choices=["hex", "cube"], help="View results")
+
+    manipulate_ap = ap.add_argument_group("Manipulation")
+    manipulate_ap.add_argument("--drill", type=float, help="Make vacancy.")
+
     arguments = ap.parse_args()
 
     print(arguments)
