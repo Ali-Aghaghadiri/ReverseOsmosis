@@ -93,7 +93,7 @@ if __name__ == "__main__":
                     default=2.0, help="Distance tolerance.")
     ap.add_argument("-o", "--out", default="./solvated.pdb",
                     help="Output pdb file. Default is ./solvated.pdb")
-    ap.add_argument("-T", "--temperature", type=float, help="Solution temperature.")
+    ap.add_argument("-T", "--temperature", type=float, default=298.15, help="Solution temperature.")
     size_ap.add_argument("-s", "--size", type=float, nargs=3)
     soluble_ap.add_argument("-a", "--add", dest="solubles", nargs=2,
                             action="append", help="Specify type and concentration.")

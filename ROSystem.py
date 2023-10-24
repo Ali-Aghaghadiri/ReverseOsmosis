@@ -31,6 +31,7 @@ ap.add_argument("-x", "--executable", default="packmol",
 ap.add_argument("-o", "--out", default="./ROSystem.pdb", help="Output file.")
 ap.add_argument("-t", "--tolerance", default=2.0, help="Set tolerance.")
 ap.add_argument("--show", action="store_true", help="View the packing result.")
+ap.add_argument("-T", "--temperature", type=float, default=298.15, help="Solution temperature.")
 
 membrane_ap.add_argument("-m", "--membrane", help="Membrane file.")
 membrane_ap.add_argument("-d", "--drill", type=float, help="Diameter of the membrane hole.")
