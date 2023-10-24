@@ -86,6 +86,13 @@ So there are two files generated with this command:
  - `system.pdb` *using packmol*
  - `system.data` *using VMD*
 
+Alternatively we can create a RO system by just having a unit cell and desired size of the chamber and molecule concentrations:
+
+```shell
+ py ROSystem.py -c models/Ti3CN_mono.cif --size 50 50 100 -d 11 -M Ca 3 -M Cl 3 -M Na 3
+```
+This command will use the unit cell defined in a `cif` file and will create a $5\times5 nm$ piston and membrane with a hole of ~ $1 nm$. the chamber will be $10 nm$ long and will contain a solution of calcium sodium chlorid 3 Molar.
+
 More details is accessible via `-h` or `--help`:
 ```
 Reverse Osmosis System builder.
@@ -98,12 +105,16 @@ options:
   -t TOLERANCE, --tolerance TOLERANCE
                         Set tolerance.
   --show                View the packing result.
+  -T TEMPERATURE, --temperature TEMPERATURE
+                        Solution temperature.
 
 Membrane:
   Specify characteristics of membrane.
 
   -m MEMBRANE, --membrane MEMBRANE
                         Membrane file.
+  -d DRILL, --drill DRILL
+                        Diameter of the membrane hole.
 
 Piston:
   Specify characteristics of piston.
@@ -115,11 +126,15 @@ Mixture:
   Specify characteristics of mixture.
 
   -M MOLECULES MOLECULES, --molecule MOLECULES MOLECULES
-                        Mixture files and count.
+                        Mixture compounds and concentration.
 
 System:
   Specify characteristics of system.
 
   -s SEPARATION, --separation SEPARATION
                         Separation of the piston and membrane.
+  -c CRYSTAL, --crystal CRYSTAL
+                        Unit cell crystal file.
+  --size SIZE SIZE SIZE
+                        Size of the chamber.
 ```
