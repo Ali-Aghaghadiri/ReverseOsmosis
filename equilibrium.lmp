@@ -23,7 +23,8 @@ variable MaxIter equal 1000     # Minimizatin Maximum Iteration
 variable MaxEval equal 10000    # Minimizatin Maximum Evaluation
 
 # System Definition
-read_data system/system.data
+# read_data system/system.data
+read_data test.system.data
 
 kim interactions C Ca Cl H N Na O Ti
 
@@ -31,8 +32,8 @@ neigh_modify one 10000
 
 # Define Region/Groups
 region piston block  INF INF  INF INF  ${ZH} INF
-region liquid block  INF INF  INF INF  ${ZL}  ${ZH}
-region bottom block  INF INF  INF INF  INF              ${ZL}
+region liquid block  INF INF  INF INF  ${ZL} ${ZH}
+region bottom block  INF INF  INF INF  INF   ${ZL}
 
 group bottom region  bottom
 group piston region  piston
@@ -53,17 +54,20 @@ dump_modify 1 element  C Ca Cl HW N Na OW Ti
 
 # NPT Equilibrium
 fix      NPT  all  npt  temp $T $T ${TD}  iso $P $P ${PD}
-minimize ${TE} ${TF} ${MaxIter} ${MaxEval}
+# minimize ${TE} ${TF} ${MaxIter} ${MaxEval}
+run 50000
 unfix    NPT
 
 # NVT Equilibrium
 fix      NVT  all  nvt  temp $T $T ${TD}
-minimize ${TE} ${TF} ${MaxIter} ${MaxEval}
+# minimize ${TE} ${TF} ${MaxIter} ${MaxEval}
+run 50000
 unfix    NVT
 
 # NVE Equilibrium
 fix      NVE  all  nve
-minimize ${TE} ${TF} ${MaxIter} ${MaxEval}
+# minimize ${TE} ${TF} ${MaxIter} ${MaxEval}
+run 50000
 unfix    NVE
 
 # Finalization
