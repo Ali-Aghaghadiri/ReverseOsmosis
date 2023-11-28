@@ -48,7 +48,10 @@ def num_ions(concentration: float, water_count: int):
     return int(moles_ions * N)  # Number of ions
 
 
-def solvate(x: float, y: float, z: float, temperature: float = 298.15, tol: float = 2.0, directory: str = "./mixture/", output: str = "solvated.pdb", packmol: str = "packmol", **molecules) -> None:
+def solvate(x: float, y: float, z: float, 
+            temperature: float = 298.15, tol: float = 2.0, 
+            directory: str = "./mixture/", output: str = "solvated.pdb", 
+            packmol: str = "packmol", **molecules) -> None:
     directory = os.path.abspath(directory)
     output = os.path.abspath(output)
 
@@ -77,7 +80,7 @@ def solvate(x: float, y: float, z: float, temperature: float = 298.15, tol: floa
     print(inp.read())
     inp.seek(0)
     subprocess.call(packmol, stdin=inp)
-    inp.close
+    inp.close()
 
 
 if __name__ == "__main__":
