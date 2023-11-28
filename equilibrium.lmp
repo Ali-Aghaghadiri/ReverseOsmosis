@@ -17,10 +17,12 @@ variable P       equal 1.0      # Pressure.
 variable TD      equal 100.0    # Temperature Damping Rate for NPT and NVT fixes.
 variable PD      equal 1000.0   # Pressure Damping Rate for NPT fix.
 
-variable TE      equal 1.0e-8   # Minimizatin Total Energy
-variable TF      equal 1.0e-10  # Minimizatin Total Force
-variable MaxIter equal 1000     # Minimizatin Maximum Iteration
-variable MaxEval equal 10000    # Minimizatin Maximum Evaluation
+variable TS equal 2             # Time Step in femto-seconds
+
+# variable TE      equal 1.0e-8   # Minimizatin Total Energy
+# variable TF      equal 1.0e-10  # Minimizatin Total Force
+# variable MaxIter equal 1000     # Minimizatin Maximum Iteration
+# variable MaxEval equal 10000    # Minimizatin Maximum Evaluation
 
 # System Definition
 # read_data system/system.data
@@ -45,6 +47,7 @@ velocity all create  $T 49284  dist gaussian  rot yes
 fix MEMBRANE bottom  setforce  0.0  0.0  0.0
 fix PISTON   piston  setforce  0.0  0.0  0.0
 
+timestep     ${TS}
 thermo       100
 thermo_style multi
 
@@ -55,19 +58,19 @@ dump_modify 1 element  C Ca Cl HW N Na OW Ti
 # NPT Equilibrium
 fix      NPT  all  npt  temp $T $T ${TD}  iso $P $P ${PD}
 # minimize ${TE} ${TF} ${MaxIter} ${MaxEval}
-run 50000
+run 600000  # 600 ps
 unfix    NPT
 
 # NVT Equilibrium
 fix      NVT  all  nvt  temp $T $T ${TD}
 # minimize ${TE} ${TF} ${MaxIter} ${MaxEval}
-run 50000
+run 600000  # 600 ps
 unfix    NVT
 
 # NVE Equilibrium
 fix      NVE  all  nve
 # minimize ${TE} ${TF} ${MaxIter} ${MaxEval}
-run 50000
+run 600000  # 600 ps
 unfix    NVE
 
 # Finalization
