@@ -1,13 +1,5 @@
 # Reverse Osmosis Simulation
 
-# ---[Initialization]------------------------------------------------------
-
-log        log/log.ro.lammps
-dimension  3
-units      real
-boundary   p p p
-atom_style full
-
 # ---[Variables]-----------------------------------------------------------
 # Geometric
 variable ZL equal 13.0  # Start of the liquid region.
@@ -28,9 +20,15 @@ variable TF equal 1.0e-10  # Minimizatin Total Force.
 variable MaxIter equal 1000  # Minimizatin Maximum Iteration.
 variable MaxEval equal 10000  # Minimizatin Maximum Evaluation.
 
-# ---[System Definition]---------------------------------------------------
+# ---[Initialization]------------------------------------------------------
 
-read_data system/system.data
+log        log/log.ro.lammps
+dimension  3
+units      real
+boundary   p p p
+atom_style full
+# System Definition
+read_data  system/system.data
 fix WALL all wall/lj126 zlo EDGE 1.0 1.0 2.5 pbc yes
 neigh_modify one 10000
 
@@ -104,10 +102,6 @@ unfix MEMBRANE
 fix   NVE      all     nve
 fix   PISTON   piston  move linear  0.0  0.0 -${PV}
 fix   MEMBRANE bottom  move linear  0.0  0.0 0.0
-run   ${TTS}
-
-unfix PISTON
-fix   PISTON   piston  move linear  0.0  0.0 0.0
 run   ${TTS}
 
 # ---[Finalization]--------------------------------------------------------
