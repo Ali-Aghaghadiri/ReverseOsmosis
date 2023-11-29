@@ -79,7 +79,7 @@ thermo       100
 timestep     ${TS}
 thermo_style multi
 # Visualization
-dump        1 all      xyz 100 visula/dump.ro.xyz
+dump        1 all      xyz 100 visual/dump.ro.xyz
 dump_modify 1 element  C Ca Cl HW N Na OW Ti
 
 # ---[Thermodynamic Equilibrium]-------------------------------------------
