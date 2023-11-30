@@ -1,15 +1,17 @@
 import argparse
-from math import ceil
-from ase.io import read
-import numpy as np
+import os
+import re
 import subprocess
 import tempfile
-import os
+from math import ceil
+
+import numpy as np
+from ase.atoms import Atoms
+from ase.io import read
 from ase.visualize import view
+
 from MyCrystal import drill, make_orthogonal
 from solution import solvate
-from ase.atoms import Atoms
-
 
 # Argument parser
 ap = argparse.ArgumentParser(
@@ -31,23 +33,100 @@ ap.add_argument("-x", "--executable", default="packmol",
 ap.add_argument("-o", "--out", default="./ROSystem.pdb", help="Output file.")
 ap.add_argument("-t", "--tolerance", default=2.0, help="Set tolerance.")
 ap.add_argument("--show", action="store_true", help="View the packing result.")
-ap.add_argument("-T", "--temperature", type=float, default=298.15, help="Solution temperature.")
+ap.add_argument("-T", "--temperature", type=float,
+                default=298.15, help="Solution temperature.")
 
 membrane_ap.add_argument("-m", "--membrane", help="Membrane file.")
-membrane_ap.add_argument("-d", "--drill", type=float, help="Diameter of the membrane hole.")
+membrane_ap.add_argument("-d", "--drill", type=float,
+                         help="Diameter of the membrane hole.")
 piston_ap.add_argument("-p", "--piston", help="Piston file.")
 mixture_ap.add_argument("-M", "--molecule", nargs=2, dest="molecules", action="append",
                         required=True, help="Mixture compounds and concentration.")
-system_ap.add_argument("-s", "--separation", type=float, help="Separation of the piston and membrane.")
-system_ap.add_argument("-c", "--crystal", type=str, help="Unit cell crystal file.")
-system_ap.add_argument("--size", nargs=3, type=float, help="Size of the chamber.")
+system_ap.add_argument("-s", "--separation", type=float,
+                       help="Separation of the piston and membrane.")
+system_ap.add_argument("-c", "--crystal", type=str,
+                       help="Unit cell crystal file.")
+system_ap.add_argument("--size", nargs=3, type=float,
+                       help="Size of the chamber.")
+
+
+
+
+def modify(data: str, settings: dict):
+    """Makes modifications to `data` based on provided `settings`.
+    `data` refers to `LAMMPS` data file."""
+    # Define regular expression patterns
+    regex_headers = r"(?:(?:\ ?)(?:\d+ (?:atom|bond|angle|dihedral|improper)(?:s| types)\n))+(?:(?:(?:\ ?)-?(?:\d+.\d* )+ (?:x|y|z)lo (?:x|y|z)hi)\n)+"
+    regex_header_z = r"(?P<zhi>-?\d+.\d+)  zlo zhi"
+    regex_masses = r"(?: Masses\n\n)(?: \d \d*.\d* # \w*\n)+"
+    regex_section = r"# (?P<section>\w*) Coeffs\n#\n(?P<lines>(?:# (?:\d*)  (?:(?:[a-zA-Z]+-?){0,})\n)+)"
+    regex_types = r"# (?P<id>\d+)  (?P<type>(?:\w+-?)*)"
+    regex_atom = r"(?P<num>\d*) (?P<molecule_tag>\d*) (?P<atom_type>\d*) (?P<charge>\d*.\d*) (?P<xyz>.*) # (?P<type>\w*) (?P<residue>(?:\w*)?)"
+    # Compile patterns
+    headers = re.compile(regex_headers)
+    header_z = re.compile(regex_header_z)
+    masses = re.compile(regex_masses)
+    section = re.compile(regex_section)
+    coeff = re.compile(regex_types)
+    atom = re.compile(regex_atom)
+
+    coefficients = settings.get("coeffs", {})
+    charges = settings.get("charges", {})
+    modified_data: list[str] = ["# LAMMPS data modified.\n"]
+    # Double up system size in z direction to create an empty chamber bellow membrane.
+    _headers: str = headers.findall(data)[-1]  #
+    zhi = header_z.search(_headers).group(1)
+    _headers = _headers.splitlines()
+    _headers[-1] = f" {-float(zhi):.6f} {zhi}  zlo zhi"
+    _headers = "\n".join(_headers)
+
+    modified_data.append(_headers)
+    modified_data.append("\n\n")
+    modified_data.extend(masses.findall(data))
+    # Insert any coefficient in its corresponding section.
+    for section_match in section.finditer(data):
+        section_match_dict = section_match.groupdict()
+        _section = section_match_dict["section"]
+        _section_lines: list[str] = []
+        # this section is commented out if no coeffs provided.
+        _section_activated = False
+
+        for line_match in coeff.finditer(section_match_dict["lines"]):
+            line_match_dict = line_match.groupdict()
+            _type = line_match_dict["type"]
+            _section_coefficients = coefficients.get(_section)
+            _type_coefficient = _section_coefficients.get(
+                _type) if _section_coefficients is not None else None
+            _coefficient = " ".join(
+                map(str, _type_coefficient)) if _type_coefficient is not None else ""
+            _section_activated = True if _coefficient else False
+            _id = line_match_dict['id'] if _coefficient else f"# {line_match_dict['id']}"
+            _line = f"{_id} {_coefficient} # {_type}\n"
+            _section_lines.append(_line)
+
+        _section_line = f"\n {_section} Coeffs\n\n" if _section_activated else f"\n# {_section} Coeffs\n\n"
+        modified_data.append(_section_line)
+        modified_data.extend(_section_lines)
+
+    modified_data.append("\n Atoms # full\n\n")
+    # Charge corrections
+    for atom_match in atom.finditer(data):
+        atom_dict = atom_match.groupdict()
+        charge = charges.get(atom_dict["type"])
+        atom_dict["charge"] = charge if charge is not None else 0
+        modified_data.append(
+            "{num} {molecule_tag} {atom_type} {charge:.6f} {xyz} # {type} {residue}\n".format(**atom_dict))
+    # Insert anything after Bonds section without modifications.
+    modified_data.extend(re.findall("\n Bonds\n(?:.*\n)+", data))
+
+    return "".join(modified_data)
 
 
 def pack(packmol: str, membrane: str | Atoms, piston: str | Atoms, separation: float,
          molecules: list[str, float], output: str, temperature: float = 298.15, tolerance=2.0):
     """
     Insert mixture molecules using `packmol` executable.
-    
+
     Parameters:
     - packmol: Path to the packmol executable.
     - membrane: Path to the file containing the membrane Atoms object.
@@ -56,7 +135,7 @@ def pack(packmol: str, membrane: str | Atoms, piston: str | Atoms, separation: f
     - molecules: List of molecule types and their quantities.
     - output: Path to the output file.
     - tolerance: Tolerance for packing molecules (default is 2.0).
-    
+
     Returns:
     None. Writes the packed system to the output file.
     """
@@ -104,7 +183,7 @@ def pack(packmol: str, membrane: str | Atoms, piston: str | Atoms, separation: f
     system_atoms.write(output)
 
 
-def lammps_data(ROSystem: str):
+def lammps_data(ROSystem: str, settings: dict = {}):
     ROSystem = ROSystem.replace('\\', '/')
     directory = os.path.dirname(ROSystem)
     file = os.path.basename(ROSystem)
@@ -145,6 +224,12 @@ def lammps_data(ROSystem: str):
     inp.close()
     print(stdout)
 
+    with open(lmpdata) as lammps_data_file:
+        modified_lammps_data_file = modify(lammps_data_file.read(), settings)
+    
+    with open(lmpdata, "w") as lammps_data_file:
+        lammps_data_file.write(modified_lammps_data_file)
+
 
 def mklyr(crystal_info: str, size: list[float], drill_radius: float = 0.0):
     crystal = read(crystal_info)
@@ -159,18 +244,43 @@ def mklyr(crystal_info: str, size: list[float], drill_radius: float = 0.0):
     return layer
 
 
-def mksystem(unit_cell: str, size: list[float], hole_diameter: float, 
-             packmol: str, output: str, tolerance: float, 
+def mksystem(unit_cell: str, size: list[float], hole_diameter: float,
+             packmol: str, output: str, tolerance: float,
              temperature: float = 298.15, **molecules):
     hole_radius = hole_diameter / 2
     piston = mklyr(unit_cell, size)
     membrane = mklyr(unit_cell, size, hole_radius)
     molecules = [[m, c] for m, c in molecules.items()]
-    pack(packmol, membrane, piston, size[2], molecules, output, temperature, tolerance)
-    lammps_data(output)
+    pack(packmol, membrane, piston, size[2],
+         molecules, output, temperature, tolerance)
 
+
+def conf_to_dict(file_path):
+    import configparser
+    config = configparser.ConfigParser(inline_comment_prefixes="#;")
+    config.read(file_path)
+    # Convert the ConfigParser object to a dictionary
+    config_dict = {"coeffs": {}, "charges": {}}
+    for section in config.sections():
+        if section.lower() == "charges":
+            section_dict = config_dict["charges"]
+        else:
+            coeff = config_dict["coeffs"]
+            coeff.setdefault(section, {})
+            section_dict = coeff[section]
+        # Convert string values to float or list of floats
+        for key, value in config.items(section):
+            key = "-".join(map(str.capitalize, key.split("-")))
+            try:
+                # Try to convert to a single float
+                section_dict[key] = float(value)
+            except ValueError:
+                # If that fails, split the string and convert each part to a float
+                section_dict[key] = [float(v) for v in value.split()]
+    return config_dict
 
 if __name__ == "__main__":
+    settings = conf_to_dict("config.ro.ini")
     arguments = ap.parse_args()
     print(arguments)
 
@@ -187,8 +297,7 @@ if __name__ == "__main__":
             tolerance=arguments.tolerance
         )
 
-        lammps_data(arguments.out)
-    
+
     elif arguments.crystal and arguments.size:
         molecules = {k: float(v) for k, v in arguments.molecules}
         mksystem(
@@ -201,6 +310,8 @@ if __name__ == "__main__":
             temperature=arguments.temperature,
             **molecules
         )
+
+    lammps_data(arguments.out, settings)
 
     if arguments.show:
         system_pdb = read(arguments.out)
