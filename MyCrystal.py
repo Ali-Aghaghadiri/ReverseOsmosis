@@ -7,37 +7,6 @@ import logging
 import numpy as np
 
 
-ap = argparse.ArgumentParser(
-    prog="Ti3AlCN",
-    description="Titanium Aluminum Cyanide MAX and MXene crystal maker.",
-    epilog="written by Ali AghaGhadiri")
-
-lattice_ap = ap.add_argument_group("Lattice", "Manipulate lattice parameters")
-lattice_ap.add_argument("-a", default=3.02, type=float,
-                        help="Lattice parameter `a`")
-lattice_ap.add_argument("-c", default=19.35, type=float,
-                        help="Lattice parameter `c`")
-lattice_ap.add_argument("--super-cell", default=[1, 1, 1], dest="size",
-                        type=int, nargs=3, help="Repetition of unitcell")
-
-phase_ap = ap.add_argument_group("Phase", "determine crystal phase.")
-phase_ap.add_argument("--max", action="store_true", help="MAX phase")
-phase_ap.add_argument("--mx", action="store_true", help="MX phase")
-phase_ap.add_argument("--mono-layer", action="store_true", dest="mono",
-                      help="Monolayer Structure")
-
-output_ap = ap.add_argument_group("Output", "Determine the output format.")
-output_ap.add_argument(
-    "--format", choices=["xyz", "pdb"], default="xyz", help="Output format")
-output_ap.add_argument("-o", "--out", help="Output directory",
-                       type=str, dest="directory", default=".")
-output_ap.add_argument("--show", default="hex",
-                       choices=["hex", "cube"], help="View results")
-
-manipulate_ap = ap.add_argument_group("Manipulation")
-manipulate_ap.add_argument(
-    "--drill", type=int, help="Make vacancy.")
-
 atomic_positions_mx_mono = [
     (0.0,     0.0,     0.5),  # Ti
     (0.33333, 0.66667, 0.66667),  # Ti
@@ -74,15 +43,15 @@ atomic_positions_max = [
     (0.66667, 0.33333, 0.58333),  # N
 ]
 
-
-def drill(crystal: Atoms, radius: int):
-    radius *= a
-    xs = len(crystal.positions[:,0]) / 2
-    ys = len(crystal.positions[:,1]) / 2
-    center = (xs*a, ys*a)
-    indices = [i for i, pos in enumerate(crystal.positions[:,:2]) if np.linalg.norm(pos - center) <= radius]
-    for index in sorted(indices, reverse=True):
-        del crystal[index]
+def drill(atoms: Atoms, radius: float):
+    # Calculate the center of the atoms object
+    xc = atoms.positions[:, 0].max() / 2
+    yc = atoms.positions[:, 1].max() / 2
+    center = np.array([xc, yc])
+    # Create a mask for atoms within the given radius from the center in xy-plane
+    mask = np.linalg.norm(atoms.positions[:, :2] - center, axis=1) < radius
+    # Remove the atoms within the given radius from the center
+    del atoms[mask]
 
 
 def shrink(crystal: Atoms) -> None:
@@ -107,6 +76,37 @@ def make_orthogonal(crystal: Atoms):
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
+
+    ap = argparse.ArgumentParser(
+        prog="Ti3AlCN",
+        description="Titanium Aluminum Cyanide MAX and MXene crystal maker.",
+        epilog="written by Ali AghaGhadiri")
+
+    lattice_ap = ap.add_argument_group("Lattice", "Manipulate lattice parameters")
+    lattice_ap.add_argument("-a", default=3.02, type=float,
+                            help="Lattice parameter `a`")
+    lattice_ap.add_argument("-c", default=19.35, type=float,
+                            help="Lattice parameter `c`")
+    lattice_ap.add_argument("--super-cell", default=[1, 1, 1], dest="size",
+                            type=int, nargs=3, help="Repetition of unitcell")
+
+    phase_ap = ap.add_argument_group("Phase", "determine crystal phase.")
+    phase_ap.add_argument("--max", action="store_true", help="MAX phase")
+    phase_ap.add_argument("--mx", action="store_true", help="MX phase")
+    phase_ap.add_argument("--mono-layer", action="store_true", dest="mono",
+                        help="Monolayer Structure")
+
+    output_ap = ap.add_argument_group("Output", "Determine the output format.")
+    output_ap.add_argument(
+        "--format", choices=["xyz", "pdb"], default="xyz", help="Output format")
+    output_ap.add_argument("-o", "--out", help="Output directory",
+                        type=str, dest="directory", default=".")
+    output_ap.add_argument("--show", default="hex",
+                        choices=["hex", "cube"], help="View results")
+
+    manipulate_ap = ap.add_argument_group("Manipulation")
+    manipulate_ap.add_argument("--drill", type=float, help="Make vacancy.")
+
     arguments = ap.parse_args()
 
     print(arguments)
@@ -147,10 +147,10 @@ if __name__ == "__main__":
                                           size=size, cellpar=max_cellpar, symprec=0.1, onduplicates="replace")
         logging.info("MX multi layer created.")
 
-    # if arguments.drill:
-    #     for c in bucket.values():
-    #         radius = arguments.drill
-    #         drill(c, radius)
+    if arguments.drill:
+        for c in bucket.values():
+            radius = arguments.drill
+            drill(c, radius)
 
     for f, c in bucket.items():
         if arguments.show == "cube":
